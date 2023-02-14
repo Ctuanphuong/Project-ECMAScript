@@ -1,1 +1,14 @@
-console.error("loi roi");
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import HomePage from "@/pages/HomePage";
+import AboutPage from "@/pages/AboutPage";
+import ProjectsPage from "@/pages/ProjectsPage";
+import PageNotFound from "@/pages/PageNotFound";
+const app = document.querySelector("#app");
+import { render, router } from "@/utilities";
+render(HomePage, app);
+router.on("/", () => render(HomePage, app));
+router.on("/about", () => render(AboutPage, app));
+router.on("/projects", () => render(ProjectsPage, app));
+router.notFound(() => render(PageNotFound, app));
+router.resolve();
