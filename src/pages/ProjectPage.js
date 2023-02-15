@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-const PortfolioPage = () => {
+const ProjectPage = () => {
   return ` <!-- WRAP ARTICLE -->
  ${Header()}
   <article class="tw-mt-[80px] tw-pb-[100px]">
@@ -225,4 +225,4 @@ const PortfolioPage = () => {
   `;
 };
 
-export default PortfolioPage;
+export default ProjectPage;
