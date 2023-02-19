@@ -1,96 +1,5 @@
 {
-  "projects": [
-    {
-      "id": 1,
-      "name": "",
-      "link": "",
-      "categoryId": 5,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676808244/Ass-ECMA/unl8y7eqctzpstcbjdnj.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676808244/Ass-ECMA/tv4hwf5kpbjcjxzfrurr.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676808245/Ass-ECMA/gaeq6stemsdc4qmdire0.jpg"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676808236/Ass-ECMA/zjvtm0wcpygcbgswbvbe.webp",
-      "date": "",
-      "creator": ""
-    },
-    {
-      "id": 3,
-      "name": "",
-      "link": "",
-      "categoryId": 3,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810380/Ass-ECMA/xutyzeulenswdq7yk0bi.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810381/Ass-ECMA/yxpeqkqlbp5dpvrhpaji.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810382/Ass-ECMA/chkakbp9kvyxdao2hr1y.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810382/Ass-ECMA/ryjtswhn9vocugvk484j.jpg"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810383/Ass-ECMA/e1nf7gvg2vkxuenromep.jpg",
-      "date": "",
-      "creator": ""
-    },
-    {
-      "name": "",
-      "link": "",
-      "categoryId": null,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810772/Ass-ECMA/yitwknqeikbpficanxnn.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810773/Ass-ECMA/worughgxf0fhyvnyndrn.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810774/Ass-ECMA/svnyojguexxpyth0xxlt.jpg"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810774/Ass-ECMA/xorr4iiawiczftr08pmu.jpg",
-      "date": "",
-      "creator": "",
-      "id": 5
-    },
-    {
-      "name": "",
-      "link": "",
-      "categoryId": null,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810791/Ass-ECMA/sly0epzqdtuxddvaimsi.jpg",
-      "date": "",
-      "creator": "",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "name": "",
-      "link": "",
-      "categoryId": 3,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810991/Ass-ECMA/zr6pvv8iwjmdxft06wpe.webp",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810992/Ass-ECMA/d6dzlyn2ibtjwz6ijrst.jpg"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676810993/Ass-ECMA/ntqbqvanhumhvu7p9o9h.jpg",
-      "date": "",
-      "creator": ""
-    },
-    {
-      "id": 8,
-      "name": "",
-      "link": "",
-      "categoryId": 3,
-      "shortdes": "",
-      "detaildes": "",
-      "images": [
-        ""
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676811016/Ass-ECMA/crjuegzytijxsuu5akrj.jpg",
-      "date": "",
-      "creator": ""
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": 3,
@@ -107,14 +16,34 @@
   ],
   "blogs": [
     {
-      "title": "Anh Phuong",
-      "categoryId": 4,
-      "shortcontent": "szz",
-      "longcontent": "dsvfiavbfkjslvbdkc",
-      "avatar": "C:\\fakepath\\765ce4bf15fe9c41f5e377ecdafd2d52.jpg",
-      "images": "C:\\fakepath\\dafb9898c975ea4d9127273db1b34e4c.jpg",
-      "date": "2023-01-31",
-      "id": 1
+      "id": 1,
+      "title": "",
+      "categoryId": 3,
+      "shortcontent": "",
+      "longcontent": "",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823619/Ass-ECMA/wspqswwebcsubjzz06v5.webp",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823695/Ass-ECMA/wyelb6w0zs8fkx06ct8g.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823696/Ass-ECMA/wuptea674et8u6zkdcjz.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823696/Ass-ECMA/v3onsvkma6cq49tvzi38.jpg"
+      ],
+      "date": "2023-02-01"
+    },
+    {
+      "id": 2,
+      "title": "",
+      "categoryId": 3,
+      "shortcontent": "",
+      "longcontent": "",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824540/Ass-ECMA/jhfonttssdujqo7o8xjg.jpg",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824423/Ass-ECMA/l92pajhuqndvyjwz86tt.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824424/Ass-ECMA/hyhkbb1viosdxm1qhfgr.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824425/Ass-ECMA/hgxsrtpbud5hboeliiri.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824426/Ass-ECMA/emoruh6m0rx5gbmh2rbf.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676824427/Ass-ECMA/i8ewcrf0gk4hyy7bm8b4.webp"
+      ],
+      "date": ""
     }
   ]
 }

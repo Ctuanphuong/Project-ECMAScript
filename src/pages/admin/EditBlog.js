@@ -3,6 +3,7 @@ import Footer from "@/components/admin/Footer";
 import { getCategories } from "@/api/category";
 import { router, useEffect, useState } from "@/utilities";
 import { getBlog, updateBlog } from "@/api/blog";
+import UpImage from "@/components/admin/UpImage";
 const EditBlog = ({ id }) => {
   //Get data categories
   const [categories, setCategories] = useState([]);
@@ -28,16 +29,26 @@ const EditBlog = ({ id }) => {
     const avatarBlog = document.querySelector("#avatar-blog");
     const imgBlog = document.querySelector("#img-blog");
     const dateBlog = document.querySelector("#date-blog");
-    formUpdate.addEventListener("submit", (e) => {
+    formUpdate.addEventListener("submit", async function (e) {
       e.preventDefault();
+      let avatar = "";
+      avatar =
+        avatarBlog.files.length > 0
+          ? await UpImage(avatarBlog.files)
+          : avatarBlog.accept;
+      let images = [];
+      images =
+        imgBlog.files.length > 0
+          ? await UpImage(imgBlog.files)
+          : imgBlog.accept.split(",");
       const newBlog = {
         id,
         title: titleBlog.value,
         categoryId: Number(cateBlog.value),
         shortcontent: shortContent.value,
         longcontent: longContent.value,
-        avatar: avatarBlog.value,
-        images: imgBlog.value,
+        avatar,
+        images,
         date: dateBlog.value,
       };
       //update blog
@@ -124,9 +135,12 @@ const EditBlog = ({ id }) => {
             type="file"
             class="form-control"
             id="avatar-blog"
+            accept="${blog.avatar}"
           />
         </div>
-        <img src="${blog.avatar}">
+        <img src="${
+          blog.avatar
+        }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
         <div class="form-group">
         <label
           for="img-blog"
@@ -138,8 +152,8 @@ const EditBlog = ({ id }) => {
           class="form-control"
           id="img-blog"
           multiple="true"
+          accept="${blog.images}"
         />
-        <img src="${blog.images}">
       </div>
         <div class="form-group">
           <label

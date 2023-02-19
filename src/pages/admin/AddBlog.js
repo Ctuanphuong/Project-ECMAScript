@@ -3,6 +3,7 @@ import Footer from "@/components/admin/Footer";
 import { router, useEffect, useState } from "@/utilities";
 import { addBlog } from "@/api/blog";
 import { getCategories } from "@/api/category";
+import UpImage from "@/components/admin/UpImage";
 const AddBlog = () => {
   //get categories
   const [categories, setCategories] = useState([]);
@@ -22,15 +23,17 @@ const AddBlog = () => {
     const avatarBlog = document.querySelector("#avatar-blog");
     const imgBlog = document.querySelector("#img-blog");
     const dateBlog = document.querySelector("#date-blog");
-    formAdd.addEventListener("submit", (e) => {
+    formAdd.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const avatar = await UpImage(avatarBlog.files);
+      const images = await UpImage(imgBlog.files);
       const blog = {
         title: titleBlog.value,
         categoryId: Number(cateBlog.value),
         shortcontent: shortContent.value,
         longcontent: longContent.value,
-        avatar: avatarBlog.value,
-        images: imgBlog.value,
+        avatar,
+        images,
         date: dateBlog.value,
       };
       //add
@@ -75,7 +78,7 @@ const AddBlog = () => {
             >Blog's Category</label
           >
           <select class="form-control" id="cate-blog">
-          <option>Tất cả</option>
+          <option value="0">Select Category</option>
           ${categories.map((category) => {
             return /*html*/ `<option value="${category.id}">${category.name}</option>`;
           })}
@@ -117,6 +120,7 @@ const AddBlog = () => {
             type="file"
             class="form-control"
             id="avatar-blog"
+
           />
         </div>
         <div class="form-group">
@@ -129,7 +133,7 @@ const AddBlog = () => {
           type="file"
           class="form-control"
           id="img-blog"
-          multiple="true"
+          multiple
         />
       </div>
         <div class="form-group">
