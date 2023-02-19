@@ -95,7 +95,7 @@ const Header = () => {
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/admin/log-out"
+                    <a class="dropdown-item" href="/admin/login"
                       >Log out<i
                         class="tw-ml-2 fa-solid fa-right-from-bracket"
                       ></i

@@ -19,6 +19,7 @@ const EditBlog = ({ id }) => {
       .then(({ data }) => setBlog(data))
       .catch((error) => console.error(error));
   }, []);
+
   //edit blog
   useEffect(() => {
     const formUpdate = document.querySelector("#form-update");
@@ -93,9 +94,15 @@ const EditBlog = ({ id }) => {
             >Blog's Category</label
           >
           <select class="form-control" id="cate-blog">
+          <option value="0">Select Category</option>
           ${categories.map((category) => {
-            return /*html*/ `
+            if (blog.categoryId == category.id) {
+              return /*html*/ `
+              <option value="${category.id}" selected>${category.name}</option>`;
+            } else {
+              return /*html*/ `
             <option value="${category.id}">${category.name}</option>`;
+            }
           })}
           </select>
         </div>

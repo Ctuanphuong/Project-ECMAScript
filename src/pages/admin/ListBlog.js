@@ -68,7 +68,7 @@ const ListBlog = () => {
 <td>${blog.title}</td>
 <td>${blog.categoryId}</td>
 <td>${blog.shortcontent}</td>
-<td><img src="${blog.avatar}" class="tw-w-[70px] tw-h-[70px] tw-rounded"></td>
+<td><img src="${blog.avatar}" class="tw-w-[70px] tw-h-[70px]"></td>
 <td>${blog.date}</td>
 <td>
   <a data-id="${blog.id}" class="btn btn-danger btn-remove"

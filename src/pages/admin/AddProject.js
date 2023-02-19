@@ -96,7 +96,7 @@ const AddProject = () => {
                 >Project's Category</label
               >
               <select class="form-control" id="cate-pro">
-              <option>Tất cả</option>;
+              <option>Select Category</option>;
               ${categories.map((category) => {
                 return `
                 <option value="${category.id}">${category.name}</option>`;

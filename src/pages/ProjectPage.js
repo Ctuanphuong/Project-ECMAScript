@@ -1,6 +1,25 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getProjects } from "@/api/project";
+import { useEffect, useState } from "@/utilities";
+import { getCategories } from "@/api/category";
 const ProjectPage = () => {
+  //get all projects
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    getProjects()
+      .then(({ data }) => setProjects(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  //get all categories
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getCategories()
+      .then(({ data }) => setCategories(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return /*html*/ ` 
   <!-- WRAP ARTICLE -->
  ${Header()}
@@ -30,191 +49,49 @@ const ProjectPage = () => {
           >
             All
           </button>
-          <button class="tw-border tw-rounded btn-port transition-3s">
-            ECMAScript
-          </button>
-          <button class="tw-border tw-rounded btn-port transition-3s">
-            Advanced JS
-          </button>
-          <button class="tw-border tw-rounded btn-port transition-3s">
-            HTML5 & CSS3
-          </button>
+          ${categories
+      .map((category) => {
+        return /*html*/ `
+            <button class="tw-border tw-rounded btn-port transition-3s">
+            ${category.name}
+          </button>`;
+      })
+      .join("")}
         </div>
         <!-- 1 row -->
         <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585736/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152435_qencil.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >HTML5 & CSS3
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-                  >School Theme Website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585741/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152041_qsggpy.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >HTML5 & CSS3
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] tw-font-bold tw-no-underline hover:tw-font-black tw-block txt-capital"
-                  >fast food website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585736/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152122_tvoizl.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >HTML5 & CSS3
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-                  >Basic Portfolio Website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
-        </div>
-        <!-- end row -->
-        <!-- 1 row -->
-        <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585737/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152333_rgswz0.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >PHP1
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-                >
-                  selling mobile phones online website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675586684/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_154338_fvmkeo.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >HTML5 & CSS3
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-                  >Online clothing store Website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
-          <!-- 1 column -->
-          <div
-            class="tw-rounded-xl tw-relative transition-3s box tw-border"
-          >
-            <a href="#"
-              ><img
-                src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675586525/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_154153_ulrc6q.png"
-                alt="portfolio image"
-                class="port-img"
-              />
-            </a>
-            <div class="box-icon">
-              <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-            </div>
-            <div class="box-content">
-              <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-                >ECMAScript
-              </span>
-              <h3 class="tw-pt-[6px]">
-                <a
-                  href="#"
-                  class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-                  >CV online website</a
-                >
-              </h3>
-            </div>
-          </div>
-          <!-- end column -->
+        ${projects.map((project) => {
+        return /*html*/ `   
+<!-- 1 column -->
+<div
+  class="tw-rounded-xl tw-relative transition-3s box tw-border"
+>
+  <a href="#"
+    ><img
+      src="${project.avatar}"
+      alt="portfolio image"
+      class="port-img"
+    />
+  </a>
+  <div class="box-icon">
+    <a href="#"><i class="fa-solid fa-circle-info"></i></a>
+  </div>
+  <div class="box-content">
+    <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
+      >${project.categoryId}
+    </span>
+    <h3 class="tw-pt-[6px]">
+      <a
+        href="#"
+        class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
+        >${project.name}</a
+      >
+    </h3>
+  </div>
+</div>
+<!-- end column -->`;
+      }).join("")}
+       
         </div>
         <!-- end row -->
       </section>

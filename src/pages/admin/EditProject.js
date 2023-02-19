@@ -149,7 +149,8 @@ const EditProject = ({ id }) => {
                 class="tw-block tw-mb-1 tw-mt-2 tw-font-medium"
                 >Project's Category</label
               >
-              <select class="form-control" id="cate-pro" selected>
+              <select class="form-control" id="cate-pro">
+              <option>Seclect Category</option>
               ${categories.map((category) => {
                 if (project.categoryId == category.id) {
                   return /*html*/ `

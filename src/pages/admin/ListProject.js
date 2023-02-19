@@ -86,6 +86,7 @@ const ListProject = () => {
             project.avatar
           }" class="tw-w-[70px] tw-h-[70px] tw-rounded"></td>
           <td>
+          <td>
             <a href="#" data-id="${
               project.id
             }" class="btn btn-danger btn-remove"
