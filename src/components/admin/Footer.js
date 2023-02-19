@@ -1,5 +1,5 @@
 const Footer = () => {
-  return `      
+  return /*html*/ `      
   <!-- WRAP FOOTER -->
   <footer class="tw-mt-5 bg-light text-center text-lg-start">
     <!-- Copyright -->

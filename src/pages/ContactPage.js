@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 const ContactPage = () => {
-  return `
+  return /*html*/ `
   ${Header()}
   <!--WRAP ARTICLE -->
   <article class="tw-mt-[80px] tw-pb-[100px]">

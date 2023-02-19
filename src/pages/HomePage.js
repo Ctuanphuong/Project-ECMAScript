@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 const HomePage = () => {
-  return `
+  return /*html*/ `
  ${Header()}
  <!-- Site Banner -->
  <section class="site-banner pb-5 tw-bg-[#f5edd8]">

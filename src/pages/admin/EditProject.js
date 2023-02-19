@@ -2,10 +2,10 @@ import Header from "@/components/admin/Header";
 import Footer from "@/components/admin/Footer";
 import { router, useEffect, useState } from "@/utilities";
 import { getCategories } from "@/api/category";
-import { addProject } from "@/api/project";
+import { getProject, updateProject } from "@/api/project";
 import axios from "axios";
-const AddProject = () => {
-  //get categories
+const EditProject = ({ id }) => {
+  //Get data categories
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     getCategories()
@@ -13,9 +13,16 @@ const AddProject = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  //add project
+  //get data projects
+  const [project, setProject] = useState({});
+
   useEffect(() => {
-    const formAdd = document.querySelector("#form-add");
+    getProject(id).then(({ data }) => setProject(data));
+  }, []);
+
+  //edit project
+  useEffect(() => {
+    const formEdit = document.querySelector("#form-edit");
     const namePro = document.querySelector("#name-pro");
     const linkPro = document.querySelector("#link-pro");
     const catePro = document.querySelector("#cate-pro");
@@ -25,11 +32,27 @@ const AddProject = () => {
     const datePro = document.querySelector("#date-pro");
     const creator = document.querySelector("#creator");
     const avatarPro = document.querySelector("#avatar-pro");
-    formAdd.addEventListener("submit", async (e) => {
+    formEdit.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const images = await uploadImages(imgPro.files);
-      const avatar = await uploadImages(avatarPro.files);
-      const project = {
+
+      //get images
+      let images = [];
+      images =
+        imgPro.files.length > 0
+          ? await updateImages(imgPro.files)
+          : imgPro.accept.split(",");
+      // const images = await updateImages(getImgPro);
+
+      //get avatar
+      let avatar = "";
+      avatar =
+        avatarPro.files.length == 0
+          ? avatarPro.accept
+          : await updateImages(avatarPro.files);
+
+      //lấy dữ liệu mới cập nhật
+      const newProject = {
+        id,
         name: namePro.value,
         link: linkPro.value,
         categoryId: Number(catePro.value),
@@ -40,15 +63,16 @@ const AddProject = () => {
         date: datePro.value,
         creator: creator.value,
       };
-      // add project
-      addProject(project)
+
+      //update project
+      updateProject(newProject)
         .then(() => router.navigate("/admin/list-project"))
         .catch(() => console.error("Error!"));
     });
   });
 
-  //upload nhiều ảnh
-  const uploadImages = async (files) => {
+  // upload nhiều ảnh
+  const updateImages = async (files) => {
     if (files) {
       const CLOUD_NAME = "phuong-fpoly";
       const PRESET_NAME = "upload-portfolio";
@@ -76,7 +100,7 @@ const AddProject = () => {
     }
   };
 
-  return /*html*/ `${Header()}
+  return /*html*/ ` ${Header()}
   <!-- WRAP ARTICLE -->
       <article class="tw-pb-10">
         <div class="welcome container tw-my-10 tw-text-center">
@@ -87,10 +111,10 @@ const AddProject = () => {
         <div class="container">
           <div class="tw-my-4">
             <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-              <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Project
+            <i class="fa-solid fa-pen-to-square"></i> Edit Project
             </h3>
           </div>
-          <form id="form-add">
+          <form id="form-edit">
             <div class="form-group">
               <label
                 for="name-pro"
@@ -102,6 +126,7 @@ const AddProject = () => {
                 class="form-control"
                 id="name-pro"
                 placeholder="Enter Project's name..."
+                value="${project.name}"
               />
             </div>
             <div class="form-group">
@@ -115,6 +140,7 @@ const AddProject = () => {
                 class="form-control"
                 id="link-pro"
                 placeholder="Enter Project's link..."
+                value="${project.link}"
               />
             </div>
             <div class="form-group">
@@ -123,11 +149,15 @@ const AddProject = () => {
                 class="tw-block tw-mb-1 tw-mt-2 tw-font-medium"
                 >Project's Category</label
               >
-              <select class="form-control" id="cate-pro">
-              <option>Tất cả</option>;
+              <select class="form-control" id="cate-pro" selected>
               ${categories.map((category) => {
-                return `
+                if (project.categoryId == category.id) {
+                  return /*html*/ `
+                <option value="${category.id}" selected>${category.name}</option>`;
+                } else {
+                  return /*html*/ `
                 <option value="${category.id}">${category.name}</option>`;
+                }
               })}
               </select>
             </div>
@@ -142,7 +172,7 @@ const AddProject = () => {
                 id="short-des"
                 rows="3"
                 placeholder="Enter a short description of the project..."
-              ></textarea>
+              >${project.shortdes}</textarea>
             </div>
             <div class="form-group">
               <label
@@ -155,7 +185,7 @@ const AddProject = () => {
                 id="detail-des"
                 rows="3"
                 placeholder="Enter detail description of the project..."
-              ></textarea>
+              >${project.detaildes}</textarea>
             </div>
             <div class="form-group">
             <label
@@ -167,7 +197,11 @@ const AddProject = () => {
               type="file"
               class="form-control"
               id="avatar-pro"
+              accept ="${project.avatar}"
             />
+            <img src="${
+              project.avatar
+            }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
           </div>
             <div class="form-group">
               <label
@@ -179,8 +213,12 @@ const AddProject = () => {
                 type="file"
                 class="form-control"
                 id="img-pro"
+                accept= "${project.images}"
                 multiple
               />
+            </div>
+            <div> 
+        
             </div>
             <div class="form-group">
               <label
@@ -193,6 +231,7 @@ const AddProject = () => {
                 class="form-control"
                 id="date-pro"
                 placeholder="Enter project completion date..."
+                value="${project.date}"
               />
             </div>
             <div class="form-group">
@@ -206,10 +245,11 @@ const AddProject = () => {
                 class="form-control"
                 id="creator"
                 placeholder="Enter the name of the participant who completed the project... "
+                value="${project.creator}"
               />
             </div>
             <div class="tw-mt-4">
-              <button class="btn btn-success">Add Project</button>
+              <button class="btn btn-success">Update Project</button>
             </div>
           </form>
         </div>
@@ -218,4 +258,4 @@ const AddProject = () => {
       ${Footer()}`;
 };
 
-export default AddProject;
+export default EditProject;

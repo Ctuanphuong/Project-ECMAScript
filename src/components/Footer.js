@@ -1,5 +1,6 @@
 const Footer = () => {
-  return ` <!-- FOOTER SECTION -->
+  return /*html*/ `
+   <!-- FOOTER SECTION -->
   <footer class="site-footer tw-bg-[#f5edd8]">
     <div class="container">
       <div class="row align-items-center justify-content-center">

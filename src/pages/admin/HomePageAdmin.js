@@ -1,7 +1,7 @@
 import Header from "@/components/admin/Header";
 import Footer from "@/components/admin/Footer";
 const HomePageAdmin = () => {
-  return `  
+  return /*html*/ `  
   ${Header()}
   <!-- WRAP ARTICLE -->
   <article>

@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 const ProjectPage = () => {
-  return ` <!-- WRAP ARTICLE -->
+  return /*html*/ ` 
+  <!-- WRAP ARTICLE -->
  ${Header()}
   <article class="tw-mt-[80px] tw-pb-[100px]">
     <div class="container">

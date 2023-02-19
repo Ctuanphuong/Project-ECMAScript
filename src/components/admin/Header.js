@@ -1,5 +1,5 @@
 const Header = () => {
-  return `   
+  return /*html*/ `   
   <!-- WRAP HEADER -->
   <header class="site-header" id="site-header">
     <div class="container-full">
@@ -8,7 +8,7 @@ const Header = () => {
           <a
             class="navbar-brand tw-font-bold"
             style="color: #fd4312"
-            href="#"
+            href="/admin"
             >PhuongDev.</a
           >
           <button
@@ -25,7 +25,7 @@ const Header = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="admin.html"
+                <a class="nav-link" aria-current="page" href="/admin"  data-navigo
                   >Home</a
                 >
               </li>
@@ -36,15 +36,16 @@ const Header = () => {
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  data-navigo
                 >
                   Category
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/admin/add-category">Add Category</a>
+                    <a class="dropdown-item" href="/admin/add-category" data-navigo >Add Category</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/admin/list-category">List Category</a>
+                    <a class="dropdown-item" href="/admin/list-category" data-navigo >List Category</a>
                   </li>
                 </ul>
               </li>

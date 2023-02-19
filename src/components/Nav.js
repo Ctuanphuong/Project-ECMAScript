@@ -1,12 +1,12 @@
 import { menus } from "@/data/menus";
 const Nav = () => {
-  return `${menus
+  return /*html*/ `${menus
     .map((menu) => {
-      return ` <li class="tw-px-5 list-none">
+      return /*html*/ `<li class="tw-px-5 list-none">
     <a
-      href="${menu.link}"
+      href="${menu.link}" data-navigo
       class="tw-no-underline tw-font-bold tw-text-lg tw-text-[#222] transition-15s hov-txt-menu"
-      >${menu.name}</a
+     >${menu.name}</a
     >
   </li>`;
     })

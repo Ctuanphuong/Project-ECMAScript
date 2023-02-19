@@ -1,6 +1,6 @@
 import Nav from "./Nav";
 const Header = () => {
-  return `
+  return /*html*/ `
   <!-- WRAP CONTAINER -->
   <div class="wrap-container">
     <!-- WRAP HEADER -->
