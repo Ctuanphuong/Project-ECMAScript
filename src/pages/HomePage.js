@@ -547,7 +547,7 @@ const HomePage = () => {
 
                     <h3 class="tw-mb-0 tw-mt-1">
                       <a
-                        href="#"
+                        href="/blog-detail/${blog.id}"
                         class="tw-text-3xl tw-leading-snug tw-no-underline tw-text-[#fff] tw-font-bold transition-3s hover:tw-text-[#fd4312]"
                         >${blog.title}</a
                       >
@@ -576,7 +576,7 @@ const HomePage = () => {
                      <ul class="tw-p-0 tw-m-0">
                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
                          <a
-                           href=""
+                           href="#"
                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
                            ><i class="fa-regular fa-folder-open"></i> ${fblog.categoryId}</a
                          >
@@ -584,7 +584,7 @@ const HomePage = () => {
                        <li class="tw-mt-2">
                          <h3>
                            <a
-                             href="#"
+                             href="/blog-detail/${fblog.id}"
                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
                            >
                            ${fblog.title}</a
