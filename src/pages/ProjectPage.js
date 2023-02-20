@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { getProjects } from "@/api/project";
 import { useEffect, useState } from "@/utilities";
 import { getCategories } from "@/api/category";
+import Category from "@/components/Category";
+import Project from "@/components/Project";
 const ProjectPage = () => {
   //get all projects
   const [projects, setProjects] = useState([]);
@@ -19,6 +21,13 @@ const ProjectPage = () => {
       .then(({ data }) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
+
+  // get all projects when click one category 
+  const onHandleClick = (id) => {
+    fetch(`http://localhost:3000/categories/${id}?_embed=projects`)
+      .then((response) => response.json())
+      .then(({ projects }) => setProjects(projects));
+  }
 
   return /*html*/ ` 
   <!-- WRAP ARTICLE -->
@@ -43,57 +52,9 @@ const ProjectPage = () => {
       </section>
       <!-- wrap my portfolio -->
       <section class="btns-portfolio">
-        <div class="button-group tw-text-center mb-5">
-          <button
-            class="tw-border tw-rounded btn-port transition-3s btn-port-active"
-          >
-            All
-          </button>
-          ${categories
-      .map((category) => {
-        return /*html*/ `
-            <button class="tw-border tw-rounded btn-port transition-3s">
-            ${category.name}
-          </button>`;
-      })
-      .join("")}
-        </div>
-        <!-- 1 row -->
-        <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-        ${projects.map((project) => {
-        return /*html*/ `   
-<!-- 1 column -->
-<div
-  class="tw-rounded-xl tw-relative transition-3s box tw-border"
->
-  <a href="#"
-    ><img
-      src="${project.avatar}"
-      alt="portfolio image"
-      class="port-img"
-    />
-  </a>
-  <div class="box-icon">
-    <a href="#"><i class="fa-solid fa-circle-info"></i></a>
-  </div>
-  <div class="box-content">
-    <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-      >${project.categoryId}
-    </span>
-    <h3 class="tw-pt-[6px]">
-      <a
-        href="/project-detail/${project.id}"
-        class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
-        >${project.name}</a
-      >
-    </h3>
-  </div>
-</div>
-<!-- end column -->`;
-      }).join("")}
-       
-        </div>
-        <!-- end row -->
+
+        ${Category({ categories, onClick: onHandleClick })}
+     ${Project({ projects })}
       </section>
       <!-- end wrap my portfolio -->
     </div>
