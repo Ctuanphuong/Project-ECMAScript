@@ -96,14 +96,14 @@ const EditBlog = ({ id }) => {
           <select class="form-control" id="cate-blog">
           <option value="0">Select Category</option>
           ${categories.map((category) => {
-            if (blog.categoryId == category.id) {
-              return /*html*/ `
+    if (blog.categoryId == category.id) {
+      return /*html*/ `
               <option value="${category.id}" selected>${category.name}</option>`;
-            } else {
-              return /*html*/ `
+    } else {
+      return /*html*/ `
             <option value="${category.id}">${category.name}</option>`;
-            }
-          })}
+    }
+  })}
           </select>
         </div>
         <div class="form-group">
@@ -145,9 +145,8 @@ const EditBlog = ({ id }) => {
             accept="${blog.avatar}"
           />
         </div>
-        <img src="${
-          blog.avatar
-        }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
+        <img src="${blog.avatar
+    }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
         <div class="form-group">
         <label
           for="img-blog"
@@ -162,6 +161,11 @@ const EditBlog = ({ id }) => {
           accept="${blog.images}"
         />
       </div>
+      <div class="tw-flex "> 
+      ${blog.images?.map(img => {
+      return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mr-4 tw-my-2 tw-rounded">`;
+    }).join("")}
+              </div>
         <div class="form-group">
           <label
             for="date-blog"

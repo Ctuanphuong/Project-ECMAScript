@@ -67,8 +67,8 @@ const ListProject = () => {
         </thead>
         <tbody>
         ${projects
-          .map((project, index) => {
-            return /*html*/ `<tr>
+      .map((project, index) => {
+        return /*html*/ `<tr>
           <th scope="row">${index + 1}</th>
           <td>${project.name}</td>
           <td>${project.categoryId}</td>
@@ -82,14 +82,12 @@ const ListProject = () => {
             >
           </td>
         
-          <td><img src="${
-            project.avatar
+          <td><img src="${project.avatar
           }" class="tw-w-[70px] tw-h-[70px] tw-rounded"></td>
+        
           <td>
-          <td>
-            <a href="#" data-id="${
-              project.id
-            }" class="btn btn-danger btn-remove"
+            <a href="#" data-id="${project.id
+          }" class="btn btn-danger btn-remove"
               ><i class="fa-solid fa-trash"></i
             ></a>
             <a href="/admin/edit-project/${project.id}" class="btn btn-warning"
@@ -97,8 +95,8 @@ const ListProject = () => {
             ></a>
           </td>
         </tr>`;
-          })
-          .join("")}      
+      })
+      .join("")}      
         </tbody>
       </table>
     </div>

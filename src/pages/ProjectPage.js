@@ -82,7 +82,7 @@ const ProjectPage = () => {
     </span>
     <h3 class="tw-pt-[6px]">
       <a
-        href="#"
+        href="/project-detail/${project.id}"
         class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline hover:tw-font-black tw-block"
         >${project.name}</a
       >

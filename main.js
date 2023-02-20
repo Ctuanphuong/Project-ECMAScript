@@ -10,10 +10,12 @@ import ListBlog from "@/pages/admin/ListBlog";
 import ListCategory from "@/pages/admin/ListCategory";
 import ListProject from "@/pages/admin/ListProject";
 import LoginPage from "@/pages/admin/LoginPage";
+import BlogDetail from "@/pages/BlogDetail";
 import BlogPage from "@/pages/BlogPage";
 import ContactPage from "@/pages/ContactPage";
 import HomePage from "@/pages/HomePage";
 import PageNotFound from "@/pages/PageNotFound";
+import ProjectDetail from "@/pages/ProjectDetail";
 import ProjectPage from "@/pages/ProjectPage";
 import ServicesPage from "@/pages/ServicesPage";
 import { render, router } from "@/utilities";
@@ -26,6 +28,12 @@ router.on("/portfolio", () => render(ProjectPage, app));
 router.on("/services", () => render(ServicesPage, app));
 router.on("/blog", () => render(BlogPage, app));
 router.on("/contact", () => render(ContactPage, app));
+router.on("/project-detail/:id", ({ data }) =>
+  render(() => ProjectDetail(data), app)
+);
+router.on("/blog-detail/:id", ({ data }) =>
+  render(() => BlogDetail(data), app)
+);
 
 //Admin routes
 router.on("/admin", () => render(HomePageAdmin, app));
@@ -41,6 +49,7 @@ router.on("/admin/list-project", () => render(ListProject, app));
 router.on("/admin/edit-project/:id", ({ data }) =>
   render(() => EditProject(data), app)
 );
+
 //blog
 router.on("/admin/add-blog", () => render(AddBlog, app));
 router.on("/admin/list-blog", () => render(ListBlog, app));

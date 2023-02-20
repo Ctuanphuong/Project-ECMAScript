@@ -90,35 +90,43 @@
   ],
   "blogs": [
     {
-      "id": 1,
-      "title": "",
-      "categoryId": 5,
-      "shortcontent": "",
-      "longcontent": "",
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823619/Ass-ECMA/wspqswwebcsubjzz06v5.webp",
+      "id": 3,
+      "title": "Learning JavaScript Online",
+      "categoryId": 4,
+      "shortcontent": "JavaScript is the world's most popular programming language.\n\nJavaScript is the programming language of the Web.\n\nJavaScript is easy to learn.\n\nThis tutorial will teach you JavaScript from basic to advanced.",
+      "longcontent": "Learning Speed\nIn this tutorial, the learning speed is your choice.\n\nEverything is up to you.\n\nIf you are struggling, take a break, or re-read the material.\n\nAlways make sure you understand all the \"Try-it-Yourself\" examples.\n\nThe only way to become a clever programmer is to: Practice. Practice. Practice. Code. Code. Code !",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676832438/Ass-ECMA/oz27etawiuvpoyc28i4x.jpg",
       "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823695/Ass-ECMA/wyelb6w0zs8fkx06ct8g.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823696/Ass-ECMA/wuptea674et8u6zkdcjz.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676823696/Ass-ECMA/v3onsvkma6cq49tvzi38.jpg"
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676863203/Ass-ECMA/nzmtarliojef8k4rvfko.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676863205/Ass-ECMA/osm0yzpfwawxv2my9q7f.jpg"
       ],
-      "date": "2023-02-01"
+      "date": "2023-02-16"
     },
     {
-      "id": 2,
-      "title": "ABCXYS",
+      "id": 4,
+      "title": "HTML là gì? CSS là gì? Tổng quan HTML CSS",
       "categoryId": 3,
-      "shortcontent": "",
-      "longcontent": "",
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825531/Ass-ECMA/xbwh5v3jgqvapmbf2i8t.jpg",
+      "shortcontent": "Khi bạn bắt đầu học lập trình thì những từ ngữ như HTML, CSS, Javascript, C#,… sẽ khiến bạn bối rối không hiểu chúng là những gì, công dụng của chúng ra sao. \n",
+      "longcontent": "Nếu bạn có thể, hãy tưởng tượng một thời gian trước khi phát minh ra Internet. Các trang web không tồn tại và sách, được in trên giấy, là nguồn thông tin chính của bạn. Vì vậy, bạn phải mất nỗ lực đáng kể để theo dõi thông tin chính xác mà bạn cần.\n\nHôm nay bạn có thể mở trình duyệt web, đọc blog front end, chuyển qua công cụ tìm kiếm mà bạn chọn và tìm thông tin nằm trong tầm tay của bạn. Và rất có thể ai đó ở đâu đó đã xây dựng một trang web cho bạn sử dụng.\n\nTrong cuốn sách này, tôi sẽ chỉ cho bạn cách xây dựng trang web bằng hai ngôn ngữ máy tính thống trị nhất là HTML và CSS.\n\nTrước khi chúng tôi bắt đầu hành trình tìm hiểu cách xây dựng trang web bằng HTML và CSS, điều quan trọng là phải hiểu sự khác biệt giữa hai ngôn ngữ, cú pháp của từng ngôn ngữ và một số thuật ngữ phổ biến.",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865011/Ass-ECMA/heho7478upryiwnhpkjw.png",
       "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825533/Ass-ECMA/gvxifmslk5nxwf0tv9fd.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825533/Ass-ECMA/sfxyzcoldqwm0uad78ts.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825534/Ass-ECMA/ckuzj2pr98arbqwkirim.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825535/Ass-ECMA/qkthk4at9ofdkm7otvhs.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825536/Ass-ECMA/j61hjxdpplsxw3ygxheh.webp",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825537/Ass-ECMA/fjdlc4wg7ddzkfeyjigs.jpg"
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676864534/Ass-ECMA/z8kswdddlbgztfzsj3ro.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676864535/Ass-ECMA/yselmesfkatn7no5tmrp.jpg"
       ],
-      "date": ""
+      "date": "2023-01-31"
+    },
+    {
+      "id": 5,
+      "title": "ECMAScript - ES6 Là gì? Overview ES6",
+      "categoryId": 4,
+      "shortcontent": "Từ trước đến giờ nhiều người chỉ nghe đến Javascript chứ chưa hề nghe đến ES6, họ lầm tưởng ES6 là một ngôn ngữ hoàn toàn mới rất mơ hồ và mông lung đúng không. Không sao hãy đến với series bài viết của mình các bạn sẽ hiểu rõ hơn về ES6 và cách triển khai của nó.",
+      "longcontent": "Khi chưa có ES thì có một đặc tả ngôn ngữ kịch bản được phát triển bởi Brendan Eich của Netscape và nó có tên là Mocha. Sau đó nó được đổi tên thành LiveScript và cuối cùng là Javascript. Vào 12-1995, Sun Microsystem và Netscape đã công bố Javascript. Tháng 3 - 1996 trình duyệt Netscape Navigator 2.0 ra đời và hỗ trợ Javascript. Sau đó, Microsoft ra mắt một ngôn ngữ tương tự tên là JScript để cạnh tranh và tránh vấn đề bản quyền. JScript được thêm vào trong Internet Explorer 3.0 và ra mắt vào tháng 8, 1996.\n\nECMAScript 6 (hay còn được gọi là ES6, ES2015) là phiên bản mới nhất của chuẩn ECMAScript. Chuẩn này được phê duyệt vào tháng 6/2015. Nó là một bản nâng cấp quan trọng cho ES kể từ ES5 đã được chuẩn hoá vào năm 2009.",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865491/Ass-ECMA/yc5orwqb9avtgh3ic19q.webp",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865492/Ass-ECMA/vnn4ex1aetvuo3qgao3w.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865493/Ass-ECMA/klmshdmoykxbwdiwy9u9.png"
+      ],
+      "date": "2023-02-08"
     }
   ]
 }

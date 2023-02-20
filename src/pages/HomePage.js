@@ -1,6 +1,26 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getProjects } from "@/api/project";
+import { useEffect, useState } from "@/utilities";
+import { getBlogs } from "@/api/blog";
 const HomePage = () => {
+  //get all projects
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    getProjects()
+      .then(({ data }) => setProjects(data))
+      .catch((error) => console.error(error));
+  }, []);
+  const sixProjects = projects.slice(0, 6);
+  // get all blog
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    getBlogs()
+      .then(({ data }) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
+  const oneBlog = blogs.slice(0, 1)
+  const fourBlogs = blogs.slice(0, 4)
   return /*html*/ `
  ${Header()}
  <!-- Site Banner -->
@@ -333,178 +353,38 @@ const HomePage = () => {
       </div>
       <!-- 1 row -->
       <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585736/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152435_qencil.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-          <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
-        </div>
-        <div class="box-content">
-          <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-            >ECMAScript
-          </span>
-          <h3 class="tw-pt-[6px]">
-            <a
-              href="#"
-              class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-              >CV online website</a
-            >
-          </h3>
-        </div>
-        </div>
-        <!-- end column -->
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585741/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152041_qsggpy.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-          <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
-        </div>
-        <div class="box-content">
-          <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-            >ECMAScript
-          </span>
-          <h3 class="tw-pt-[6px]">
-            <a
-              href="#"
-              class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-              >CV online website</a
-            >
-          </h3>
-        </div>
-        </div>
-        <!-- end column -->
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585736/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152122_tvoizl.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-          <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
-        </div>
-        <div class="box-content">
-          <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-            >ECMAScript
-          </span>
-          <h3 class="tw-pt-[6px]">
-            <a
-              href="#"
-              class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-              >CV online website</a
-            >
-          </h3>
-        </div>
-        </div>
-        <!-- end column -->
-      </div>
-      <!-- end row -->
-      <!-- 1 row -->
-      <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675585737/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_152333_rgswz0.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-          <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
-        </div>
-        <div class="box-content">
-          <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-            >ECMAScript
-          </span>
-          <h3 class="tw-pt-[6px]">
-            <a
-              href="#"
-              class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-              >CV online website</a
-            >
-          </h3>
-        </div>
-        </div>
-        <!-- end column -->
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675586684/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_154338_fvmkeo.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-          <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
-        </div>
-        <div class="box-content">
-          <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-            >ECMAScript
-          </span>
-          <h3 class="tw-pt-[6px]">
-            <a
-              href="#"
-              class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-              >CV online website</a
-            >
-          </h3>
-        </div>
-        </div>
-        <!-- end column -->
-        <!-- 1 column -->
-        <div
-          class="tw-rounded-xl tw-relative transition-3s box tw-border"
-        >
-          <a href="#"
-            ><img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675586525/Project%20ECMAScript/Portfolio/Screenshot_2023-02-05_154153_ulrc6q.png"
-              alt="portfolio image"
-              class="port-img"
-            />
-          </a>
-          <div class="box-icon">
-            <a href="#"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
+        ${sixProjects.map((project) => {
+    return /*html*/`
+          <!-- 1 column -->
+          <div
+            class="tw-rounded-xl tw-relative transition-3s box tw-border"
+          >
+            <a href="project-detail/${project.id}"
+              ><img
+                src="${project.avatar}"
+                alt="portfolio image"
+                class="port-img"
+              />
+            </a>
+            <div class="box-icon">
+            <a href="project-detail/${project.id}"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
           </div>
           <div class="box-content">
             <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-              >ECMAScript
+              >${project.categoryId}
             </span>
             <h3 class="tw-pt-[6px]">
               <a
-                href="#"
+                href="project-detail/${project.id}"
                 class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
-                >CV online website</a
+                >${project.name}</a
               >
             </h3>
           </div>
-        </div>
-        <!-- end column -->
+          </div>
+          <!-- end column -->
+          `
+  }).join("")}
       </div>
       <!-- end row -->
       <!-- btn see more -->
@@ -633,209 +513,101 @@ const HomePage = () => {
                 </div>
               </div>
               <div class="grid-cols-2 tw-mb-6">
-                <!-- one column -->
+                ${oneBlog.map(blog => {
+    return /*html*/ `
+                  <!-- one column -->
                 <div class="box-blog-1">
-                  <div class="img-wrapper">
-                    <img
-                      src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675696488/Project%20ECMAScript/Portfolio/javascript-programming-code-abstract-technology-background_272306-155_gthlns.avif"
-                      alt="Blog's Image"
-                      class="tw-align-middle tw-w-full tw-h-full transition-3s"
-                    />
-                  </div>
-                  <div class="box-blog-1-content">
-                    <div>
-                      <ul class="tw-flex tw-p-0 tw-m-0">
-                        <li
-                          class="tw-text-[#fff] tw-text-base tw-list-none txt-captital"
-                        >
-                          <i class="fa-regular fa-clock"></i> October 23, 2021
-                        </li>
-                        <li class="tw-mx-2 tw-text-[#fff] tw-text-base">
-                          <span>|</span>
-                        </li>
-                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
-                          <a
-                            href=""
-                            class="tw-text-[#fff] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312]"
-                            ><i class="fa-regular fa-folder-open"></i>
-                            JavaScript</a
-                          >
-                        </li>
-                      </ul>
-
-                      <h3 class="tw-mb-0 tw-mt-1">
+                <div class="img-wrapper">
+                  <img
+                    src="${blog.avatar}"
+                    alt="Blog's Image"
+                    class="tw-align-middle tw-w-full tw-h-full transition-3s"
+                  />
+                </div>
+                <div class="box-blog-1-content">
+                  <div>
+                    <ul class="tw-flex tw-p-0 tw-m-0">
+                      <li
+                        class="tw-text-[#fff] tw-text-base tw-list-none txt-captital"
+                      >
+                        <i class="fa-regular fa-clock"></i> ${blog.date}
+                      </li>
+                      <li class="tw-mx-2 tw-text-[#fff] tw-text-base">
+                        <span>|</span>
+                      </li>
+                      <li class="tw-mr-[24px] tw-text-base tw-list-none">
                         <a
-                          href="#"
-                          class="tw-text-3xl tw-leading-snug tw-no-underline tw-text-[#fff] tw-font-bold transition-3s hover:tw-text-[#fd4312]"
-                          >Javascript algorythm and data structure for
-                          beginners</a
+                          href=""
+                          class="tw-text-[#fff] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312]"
+                          ><i class="fa-regular fa-folder-open"></i>
+                          ${blog.categoryId}</a
                         >
-                      </h3>
-                    </div>
+                      </li>
+                    </ul>
+
+                    <h3 class="tw-mb-0 tw-mt-1">
+                      <a
+                        href="#"
+                        class="tw-text-3xl tw-leading-snug tw-no-underline tw-text-[#fff] tw-font-bold transition-3s hover:tw-text-[#fd4312]"
+                        >${blog.title}</a
+                      >
+                    </h3>
                   </div>
                 </div>
-                <!-- end column -->
+              </div>
+              <!-- end column -->
+                  `
+  })}
 
                 <!-- one column -->
                 <div class="grid-cols-2">
-                  <!-- a small column -->
-                  <div class="box-blog-2">
-                    <div class="img-wrapper">
-                      <img
-                        src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675674749/Project%20ECMAScript/Portfolio/post-thumbnail-03_wnytfd.jpg"
-                        alt="Blog's Image"
-                        class="tw-align-middle tw-h-[250px]"
-                      />
-                    </div>
-                    <div class="box-blog-2-content">
-                      <ul class="tw-p-0 tw-m-0">
-                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
-                          <a
-                            href=""
-                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                            ><i class="fa-regular fa-folder-open"></i> Web
-                            design</a
-                          >
-                        </li>
-                        <li class="tw-mt-2">
-                          <h3>
-                            <a
-                              href="#"
-                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
-                            >
-                              Design a wesite using Figma easily</a
-                            >
-                          </h3>
-                        </li>
-                        <li
-                          class="blog-cat tw-text-[#948daa] tw-text-base tw-list-none transition-3s font-open-sans li-absolute"
-                        >
-                          <i class="fa-regular fa-clock"></i> October 23, 2021
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- end a small column -->
-                  <!-- a small column -->
-                  <div class="box-blog-2">
-                    <div class="img-wrapper">
-                      <img
-                        src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675674749/Project%20ECMAScript/Portfolio/post-thumbnail-04_v91i47.jpg"
-                        alt="Blog's Image"
-                        class="tw-align-middle tw-h-[250px]"
-                      />
-                    </div>
-                    <div class="box-blog-2-content">
-                      <ul class="tw-p-0 tw-m-0">
-                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
-                          <a
-                            href=""
-                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                            ><i class="fa-regular fa-folder-open"></i> Web
-                            design</a
-                          >
-                        </li>
-                        <li class="tw-mt-2">
-                          <h3>
-                            <a
-                              href="#"
-                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
-                            >
-                              Break on through to the other side</a
-                            >
-                          </h3>
-                        </li>
-                        <li
-                          class="blog-cat tw-text-[#948daa] tw-text-base tw-list-none transition-3s font-open-sans li-absolute"
-                        >
-                          <i class="fa-regular fa-clock"></i> October 23, 2021
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- end a small column -->
-                  <!-- a small column -->
-                  <div class="box-blog-2">
-                    <div class="img-wrapper">
-                      <img
-                        src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675674749/Project%20ECMAScript/Portfolio/post-thumbnail-05_kd0qcl.jpg"
-                        alt="Blog's Image"
-                        class="tw-align-middle tw-h-[250px]"
-                      />
-                    </div>
-                    <div class="box-blog-2-content">
-                      <ul class="tw-p-0 tw-m-0">
-                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
-                          <a
-                            href=""
-                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                            ><i class="fa-regular fa-folder-open"></i> Web
-                            design</a
-                          >
-                        </li>
-                        <li class="tw-mt-2">
-                          <h3>
-                            <a
-                              href="#"
-                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
-                            >
-                              Imagine there is no heaven</a
-                            >
-                          </h3>
-                        </li>
-                        <li
-                          class="blog-cat tw-text-[#948daa] tw-text-base tw-list-none transition-3s font-open-sans li-absolute"
-                        >
-                          <i class="fa-regular fa-clock"></i> October 23, 2021
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- end a small column -->
-                  <!-- a small column -->
-                  <div class="box-blog-2">
-                    <div class="img-wrapper">
-                      <img
-                        src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675674749/Project%20ECMAScript/Portfolio/post-thumbnail-06_yaallb.jpg"
-                        alt="Blog's Image"
-                        class="tw-align-middle tw-h-[250px]"
-                      />
-                    </div>
-                    <div class="box-blog-2-content">
-                      <ul class="tw-p-0 tw-m-0">
-                        <li class="tw-mr-[24px] tw-text-base tw-list-none">
-                          <a
-                            href=""
-                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                            ><i class="fa-regular fa-folder-open"></i> Web
-                            design</a
-                          >
-                        </li>
-                        <li class="tw-mt-2">
-                          <h3>
-                            <a
-                              href="#"
-                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
-                            >
-                              When the musics over turn off the light</a
-                            >
-                          </h3>
-                        </li>
-                        <li
-                          class="blog-cat tw-text-[#948daa] tw-text-base tw-list-none transition-3s font-open-sans li-absolute"
-                        >
-                          <i class="fa-regular fa-clock"></i> October 23, 2021
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- end a small column -->
+                 ${fourBlogs.map(fblog => {
+    return /*html*/ `
+                   <!-- a small column -->
+                   <div class="box-blog-2">
+                   <div class="img-wrapper">
+                     <img
+                       src="${fblog.avatar}"
+                       alt="Blog's Image"
+                       class="tw-align-middle tw-h-[250px]"
+                     />
+                   </div>
+                   <div class="box-blog-2-content">
+                     <ul class="tw-p-0 tw-m-0">
+                       <li class="tw-mr-[24px] tw-text-base tw-list-none">
+                         <a
+                           href=""
+                           class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
+                           ><i class="fa-regular fa-folder-open"></i> ${fblog.categoryId}</a
+                         >
+                       </li>
+                       <li class="tw-mt-2">
+                         <h3>
+                           <a
+                             href="#"
+                             class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
+                           >
+                           ${fblog.title}</a
+                           >
+                         </h3>
+                       </li>
+                       <li
+                         class="blog-cat tw-text-[#948daa] tw-text-base tw-list-none transition-3s font-open-sans li-absolute"
+                       >
+                         <i class="fa-regular fa-clock"></i> ${fblog.date}
+                       </li>
+                     </ul>
+                   </div>
+                 </div>
+                 <!-- end a small column -->
+                  `
+  }).join('')}
                 </div>
                 <!-- end column -->
               </div>
               <!-- btn see more -->
               <div class="btn-see-more">
-                <a href="blog.html"
+                <a href="/blog"
                   >see more<i class="fa-solid fa-arrow-right tw-ml-2"></i
                 ></a>
               </div>

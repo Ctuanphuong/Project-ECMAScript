@@ -152,14 +152,14 @@ const EditProject = ({ id }) => {
               <select class="form-control" id="cate-pro">
               <option>Seclect Category</option>
               ${categories.map((category) => {
-                if (project.categoryId == category.id) {
-                  return /*html*/ `
+    if (project.categoryId == category.id) {
+      return /*html*/ `
                 <option value="${category.id}" selected>${category.name}</option>`;
-                } else {
-                  return /*html*/ `
+    } else {
+      return /*html*/ `
                 <option value="${category.id}">${category.name}</option>`;
-                }
-              })}
+    }
+  })}
               </select>
             </div>
             <div class="form-group">
@@ -200,9 +200,8 @@ const EditProject = ({ id }) => {
               id="avatar-pro"
               accept ="${project.avatar}"
             />
-            <img src="${
-              project.avatar
-            }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
+            <img src="${project.avatar
+    }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
           </div>
             <div class="form-group">
               <label
@@ -218,8 +217,10 @@ const EditProject = ({ id }) => {
                 multiple
               />
             </div>
-            <div> 
-        
+            <div class="tw-flex"> 
+    ${project.images?.map(img => {
+      return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mx-2 tw-my-2 tw-rounded">`;
+    }).join("")}
             </div>
             <div class="form-group">
               <label

@@ -1,3 +1,5 @@
+import Navigo from "navigo";
+import { router } from "@/utilities";
 const Header = () => {
   return /*html*/ `   
   <!-- WRAP HEADER -->
