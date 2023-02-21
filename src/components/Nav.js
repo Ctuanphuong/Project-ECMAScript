@@ -4,8 +4,8 @@ const Nav = () => {
     .map((menu) => {
       return /*html*/ `<li class="tw-px-5 list-none">
     <a
-      href="${menu.link}" data-navigo
-      class="tw-no-underline tw-font-bold tw-text-lg tw-text-[#222] transition-15s hov-txt-menu"
+      href="${menu.link}" 
+      class="tw-no-underline tw-font-bold tw-text-lg tw-text-[#222] transition-15s hov-txt-menu" data-navigo="true"
      >${menu.name}</a
     >
   </li>`;

@@ -99,7 +99,7 @@ const useEffect = (cb, deps) => {
   currentEffectOrder++;
 };
 
-router.on("/*", () => {}, {
+router.on("/*", () => { }, {
   before(done, match) {
     states = [];
     currentStateOrder = 0;

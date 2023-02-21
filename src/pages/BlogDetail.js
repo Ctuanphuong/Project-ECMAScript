@@ -11,7 +11,7 @@ const BlogDetail = ({ id }) => {
   useEffect(() => {
     getBlog(id).then(({ data }) => setBlog(data));
   }, []);
-
+  console.log(blog.images)
   //get all categories
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -19,7 +19,8 @@ const BlogDetail = ({ id }) => {
       .then(({ data }) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
-
+  const getNameCate = categories.filter(category => category.id == blog.categoryId)
+  console.log(getNameCate)
   return /*html*/ `
   ${Header()}
   <!-- WRAP ARTICLE -->
@@ -48,7 +49,7 @@ const BlogDetail = ({ id }) => {
               <a
                 href=""
                 class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312] font-open-sans"
-                ><i class="fa-regular fa-folder-open"></i>   ${blog.categoryId}</a
+                ><i class="fa-regular fa-folder-open"></i>   ${getNameCate[0]?.name}</a
               >
             </li>
           </ul>

@@ -2,12 +2,21 @@ import Header from "@/components/admin/Header";
 import Footer from "@/components/admin/Footer";
 import { useEffect, useState } from "@/utilities";
 import { getBlogs, removeBlog } from "@/api/blog";
+import { getCategories } from "@/api/category";
 const ListBlog = () => {
   // get all blog
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     getBlogs()
       .then(({ data }) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  //get all categories
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getCategories()
+      .then(({ data }) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -55,21 +64,18 @@ const ListBlog = () => {
             <th scope="col">Title</th>
             <th scope="col">Category</th>
             <th scope="col">Content</th>
-            <th scope="col">Image</th>
-            <th scope="col">Date</th>
             <th scope="col">Operation</th>
           </tr>
         </thead>
         <tbody>
           ${blogs.map((blog, index) => {
-            return /*html*/ `  
+    const getIdCate = categories.filter(category => { return category.id == blog.categoryId })
+    return /*html*/ `  
 <tr>
 <th scope="row">${index + 1}</th>
 <td>${blog.title}</td>
-<td>${blog.categoryId}</td>
+<td>${getIdCate[0].name}</td>
 <td>${blog.shortcontent}</td>
-<td><img src="${blog.avatar}" class="tw-w-[70px] tw-h-[70px]"></td>
-<td>${blog.date}</td>
 <td>
   <a data-id="${blog.id}" class="btn btn-danger btn-remove"
     ><i class="fa-solid fa-trash"></i
@@ -79,7 +85,7 @@ const ListBlog = () => {
   ></a>
 </td>
 </tr>`;
-          })}
+  })}
         
         </tbody>
       </table>

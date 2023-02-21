@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getProject } from "@/api/project";
 import { useEffect, useState } from "@/utilities";
+import { getCategories } from "@/api/category";
 
 const ProjectDetail = ({ id }) => {
   //get data projects
@@ -11,7 +12,23 @@ const ProjectDetail = ({ id }) => {
     getProject(id).then(({ data }) => setProject(data));
   }, []);
 
+  //get all categories
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getCategories().then(({ data }) => setCategories(data)).catch((error) => console.error(error));
+  }, []);
+
+  //so sánh id để duyệt ra mảng cate chứa id và name hợp với categoryId
+  const getNameCate = categories.filter((category) => {
+    return category.id == project.categoryId
+  })
+
+  // Chỉ lấy năm
+  console.log(project.date);
+  let getArrDate = project.date?.split("-");
+  let getYear = new Date(getArrDate)
   return /*html*/ `  
+  
    ${Header()}
   <!-- WRAP ARTICLE -->
   <article class="tw-my-[80px]">
@@ -30,7 +47,7 @@ const ProjectDetail = ({ id }) => {
             >
               <span
                 class="tw-py-[2px] tw-px-3 tw-bg-[#fdb63c] tw-rounded-2xl tw-font-semibold tw-block"
-                >   ${project.date}</span
+                >${getYear.getFullYear()}</span
               >
             </li>
             <li
@@ -42,7 +59,7 @@ const ProjectDetail = ({ id }) => {
               <a
                 href=""
                 class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312] font-open-sans"
-                ><i class="fa-regular fa-folder-open"></i> ${project.categoryId}</a
+                ><i class="fa-regular fa-folder-open"></i> ${getNameCate[0]?.name}</a
               >
             </li>
           </ul>

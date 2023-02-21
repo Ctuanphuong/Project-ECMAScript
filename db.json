@@ -1,73 +1,102 @@
 {
   "projects": [
     {
-      "name": "Create Mobile Phone Store Website123",
-      "link": "fb.com/phuongctdev111",
-      "categoryId": 4,
-      "shortdes": "zscdvf",
-      "detaildes": "ihvuobdsuocudscdsb",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825722/Ass-ECMA/xh5dxh1edsa6nlus0rov.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825724/Ass-ECMA/gsfqf1n7mzmq3xv2p5zm.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825725/Ass-ECMA/tkjfwux9zywj8qg9u9kk.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825725/Ass-ECMA/lyoh7wxvcyfkpxtdox20.webp"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676825726/Ass-ECMA/mrpncnshbqcagoi9eeoc.webp",
-      "date": "2023-02-09",
-      "creator": "Phuongqqqq",
-      "id": 1
-    },
-    {
-      "name": "Create Mobile Phone Store Website",
-      "link": "fb.com/phuongctdev111",
-      "categoryId": 5,
-      "shortdes": "uocdguvdsc",
-      "detaildes": "iugcieusdcushc",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830328/Ass-ECMA/er1qhqauvr7r65fuxfne.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830329/Ass-ECMA/spgh3s38l0vphhkrhbqv.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830330/Ass-ECMA/qraerl4xgtuzkzoundkt.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830331/Ass-ECMA/t3mjawx9ss694xythf5i.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830332/Ass-ECMA/ptfd50mi4mpimfwfekqs.webp"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830332/Ass-ECMA/fdrhbhgpceygllv9ml89.jpg",
-      "date": "2023-02-01",
-      "creator": "Phuong",
-      "id": 2
-    },
-    {
-      "name": "Create Fashion Store Website",
-      "link": "fb.com/phuongctdevaaa",
-      "categoryId": 3,
-      "shortdes": "jocdnxdls",
-      "detaildes": "ggggggggggggg",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830401/Ass-ECMA/avbtf43ihmhctiyjgv1s.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830402/Ass-ECMA/q8dpfjly2kfbbgzgk0qt.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830403/Ass-ECMA/v8p9zp4szdcazivoy4m5.webp",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830403/Ass-ECMA/tnwekynpmdlycdjxsoxx.jpg"
-      ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830404/Ass-ECMA/bocubu1i7muuf92dsz2u.jpg",
-      "date": "2023-01-31",
-      "creator": "Phuongbeo",
-      "id": 3
-    },
-    {
-      "name": "abc",
-      "link": "http://localhost:3000/projects",
+      "id": 5,
+      "name": "UltraPhone - Mobile Phone Store Website",
+      "link": "https://github.com/Ctuanphuong/duan1-ultraphone",
       "categoryId": 6,
-      "shortdes": "qecacs",
-      "detaildes": "cdbfhwwer",
+      "shortdes": "This is a PHP1 project with the participation of 3 members: Chu Tuan Phuong, Nguyen Van Minh and Do Quang Linh",
+      "detaildes": "With the request to make a website for the purpose of making a profit for yourself. With the trend of technological development of today's society, the phone is an extremely important and necessary thing for everyone, it seems to be an indispensable item. So we have chosen the topic is Website selling phones online",
       "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830508/Ass-ECMA/hnwsrsiteue3xw8afjpb.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830509/Ass-ECMA/uvqutri9w6rmuwsxmhn8.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830510/Ass-ECMA/kwdx591uffiuypickopm.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830510/Ass-ECMA/i3ooqdlfby6wcd4qhmzv.webp"
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676918635/Ass-ECMA/fhvwvc0xtv4nscdtiraz.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676918635/Ass-ECMA/clca5nrrkfsqjdhihxhc.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676918636/Ass-ECMA/gzwrxqywzqwrxsvosjsv.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676918638/Ass-ECMA/cgs4kbbgohdouz7fon0p.png"
       ],
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676830511/Ass-ECMA/vre4blghx8uvefp9z3bu.jpg",
-      "date": "2023-02-01",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676918639/Ass-ECMA/fjmcl8wymarpitjo2f3t.png",
+      "date": "2021-02-28",
+      "creator": "Phuong, Minh, Linh"
+    },
+    {
+      "name": "Crayons Preschool",
+      "link": "https://github.com/Ctuanphuong/HTML5-CSS3",
+      "categoryId": 3,
+      "shortdes": "HTML5/CSS3 assignment to create a basic website from semester 3",
+      "detaildes": "This is a project to create a website from the basic HTML/CSS3 knowledge I learned from term 2, it seems really simple but at the beginning, it took me a week to complete it.",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927338/Ass-ECMA/jwjltrvhgv83vbs6jyoa.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927339/Ass-ECMA/eoyejzclfgo7qptixt7n.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927341/Ass-ECMA/huwhhwy0rwzxfeyj1qfg.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927342/Ass-ECMA/ivv5b51fny4wslfu3dcp.png"
+      ],
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927342/Ass-ECMA/jueucj86ayrpeueayhlf.png",
+      "date": "2022-03-21",
       "creator": "Phuong",
-      "id": 4
+      "id": 6
+    },
+    {
+      "name": "Personal Website",
+      "link": "https://github.com/Ctuanphuong/KTXDWEB-WE2022",
+      "categoryId": 3,
+      "shortdes": "A project about CV Website at semester 3",
+      "detaildes": "A personal project that I have been exposed to since term 3, it includes knowledge of html5/css3 and basic javascipt. Also in this project I also learned a framework called TailwindCss",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927997/Ass-ECMA/myswdpwktxtdu0mszpho.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927998/Ass-ECMA/czgfmjerep9nhjxcdke7.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927999/Ass-ECMA/r4hmcvbjub3arzhyevjb.png"
+      ],
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928000/Ass-ECMA/ofgps5k3uz6fddikiujs.png",
+      "date": "2022-02-21",
+      "creator": "Phuong",
+      "id": 7
+    },
+    {
+      "name": "CozaStore - Fashion Online Shop ",
+      "link": "https://github.com/Ctuanphuong/CozaStore",
+      "categoryId": 3,
+      "shortdes": "\nBased on my pure JS and HTML/CSS coding skills practice project",
+      "detaildes": "This is a project I made by hand according to a template I referenced online, with my HTML/CSS knowledge and a little bit more JS knowledge. And so I finished it",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928434/Ass-ECMA/zhkq2xlkvvs9x80ure4j.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928435/Ass-ECMA/phcf7mhtdzvwvkedns1f.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928436/Ass-ECMA/cpvjwry85bxou0mmx63v.png"
+      ],
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928437/Ass-ECMA/k10ko69wi8hrg5tkuxim.png",
+      "date": "2022-07-21",
+      "creator": "Phuong",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "name": "Portfolio - Project ECMAScript",
+      "link": "phuongdev.vercel.app",
+      "categoryId": 4,
+      "shortdes": "Assignment of ECMAScript",
+      "detaildes": "This is the ECMAScript 5th semester project that I learned, I was introduced to the new syntax in Javascript, it's shorter and easier to see, it's called ES6. I learned a lot of new knowledge and it helped me to make this project",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928959/Ass-ECMA/ok1uwt2v7ufjw1z4qzez.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928960/Ass-ECMA/eg603luczhnmcjhefhqd.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928962/Ass-ECMA/n9pxkjwz3xwq0bc9xmik.png"
+      ],
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676928818/Ass-ECMA/o68f5mngotg2dl0gd5n6.png",
+      "date": "2023-02-21",
+      "creator": "Phuong"
+    },
+    {
+      "id": 10,
+      "name": "Mix Website - Basic Javascript",
+      "link": "",
+      "categoryId": 5,
+      "shortdes": "Basic Javascript assignment, semester 2",
+      "detaildes": "For the first time, I was introduced to Javascript, working with the DOM and deploying the project to the website. That feeling was so new and interesting, with the basic knowledge I learned, I completed the assignment.",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676947573/Ass-ECMA/rjltffcpbucgszyhfooc.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676947574/Ass-ECMA/xyqjtyypuqu06g7qdtjz.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676947575/Ass-ECMA/gogbpjfdiai2yjpsccwe.png"
+      ],
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676930018/Ass-ECMA/uzwr1edj31yser5nmds8.png",
+      "date": "2022-01-21",
+      "creator": "Phuong"
     }
   ],
   "categories": [
@@ -80,53 +109,67 @@
       "id": 4
     },
     {
-      "name": "PHP1",
+      "name": "JavaScript",
       "id": 5
     },
     {
-      "name": "PHP2",
+      "name": "PHP1",
       "id": 6
     }
   ],
   "blogs": [
     {
-      "id": 3,
-      "title": "Learning JavaScript Online",
-      "categoryId": 4,
-      "shortcontent": "JavaScript is the world's most popular programming language.\n\nJavaScript is the programming language of the Web.\n\nJavaScript is easy to learn.\n\nThis tutorial will teach you JavaScript from basic to advanced.",
-      "longcontent": "Learning Speed\nIn this tutorial, the learning speed is your choice.\n\nEverything is up to you.\n\nIf you are struggling, take a break, or re-read the material.\n\nAlways make sure you understand all the \"Try-it-Yourself\" examples.\n\nThe only way to become a clever programmer is to: Practice. Practice. Practice. Code. Code. Code !",
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676832438/Ass-ECMA/oz27etawiuvpoyc28i4x.jpg",
+      "id": 1,
+      "title": "What is a programming language? The most popular programming languages today",
+      "categoryId": 3,
+      "shortcontent": "“What is a programming language, why use a programming language to communicate with a computer?” This is the most frequently asked question by newcomers to IT. Follow the article to learn more!",
+      "longcontent": "A programming language is a computer language, used in programming to implement algorithms, consisting of a set of strings that produce various types of machine code output. A programming language is often described as divided into two parts: syntax (formal) and semantics (meaning). Programmers will use programming languages to develop programs, software, scripts, and instructions for the computer to execute and follow. Although each language has its own syntax, many programming languages still have similarities with each other.\nSome of the most popular programming languages\nIf you are wondering to choose the right programming language for you, you can refer to some of the most popular programming languages below!\n\n1. JavaScript\nIt's no surprise that JavaScript tops this list. The popularity of this language comes from two main reasons: most web browsers use JavaScript and it is also one of the easiest languages to learn with a lot of flexible syntax. Although it is a language for the Front-end, JavaScript is still used for the Backend through Node.js.\n\nMoreover, JavaScript has countless communities, online courses that support users, making it even more accessible and applicable.\nApplications of JavaScript: Web Development Developing Game Mobile apps Building web servers\n\n2. Java\nJava is currently one of the most sought-after languages by employers globally (#3 according to HackerRank) and has held the #5 spot on Stack Overflow's list of most commonly used languages. for 2 consecutive years.\n\nJava's popularity is mainly due to the fact that the language is relatively easy to learn and use; has incredible security and can handle large amounts of data. These features make Java the ideal language in the financial sector and are applied in e-banking, online payment and stock market.\n\nApplications of Java: E-Commerce Finance Application Development\n\n3. Python\nPython is a user-friendly back-end language that is even considered similar to English. Python is also famous for its rigor, fast, powerful and available in all operating systems.\n\nSeveral popular digital tools and platforms have been developed in Python, including YouTube, Google Search, and iRobot.\n\nApplications of Python: Back end development Data science Application development\n\n4. Java\nJava is currently one of the most sought-after languages by employers globally (#3 according to HackerRank) and has held the #5 spot on Stack Overflow's list of most commonly used languages. for 2 consecutive years.\n\nApplications of Java: E-Commerce Finance Application Development\n\n5. C++\nC++ is one of the most powerful programming languages and is used in many industries, including VR, software and game development, robotics, and scientific computing. C++ is an extension of C that works well for programming systems that run applications, as opposed to the applications themselves. C++ also works well for multi-device and cross-platform systems. Over time, programmers wrote a large set of libraries and compilers for C++.\n\nConclude\nAbove is the concept of programming languages and some popular programming languages. Hope this article will be useful to you ^^",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676929540/Ass-ECMA/lq7sjc6df2zpg4r97wb8.jpg",
       "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676863203/Ass-ECMA/nzmtarliojef8k4rvfko.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676863205/Ass-ECMA/osm0yzpfwawxv2my9q7f.jpg"
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676925779/Ass-ECMA/s5qho5sabhjdjqvemlac.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676925780/Ass-ECMA/ggnbc2gxtp5er5r8ka8a.jpg"
       ],
-      "date": "2023-02-16"
+      "date": "2023-02-22"
+    },
+    {
+      "id": 2,
+      "title": "What is web programming? What skills do web developers need?",
+      "categoryId": 4,
+      "shortcontent": "Walking around the communities, we all see people saying that \"web developers are hot and not afraid of unemployment\", so what is web programming and what skills do web developers need? Check out this article!",
+      "longcontent": "1. What is web programming? Correct understanding of the hot industry\nThe concept of web programming\nAlthough you have heard about web programming a lot, many of you must still wonder what web programming is and whether web programming is the same as web design.\n\nIn essence, web programming is getting all the data from the web design department and turning it into a web engine that interacts with the database and can interact with users through the language of the machine. count. After building the website, it will need some tools to help website administrators to measure and control the amount of traffic pouring into the website, uptime, downtime, visitor exit rate, bandwidth overload, etc. ...\nThe concept of web programming\n\nCurrently, website programmers are divided into 3 main positions, including: Front-end programmer, Back-end programmer and Full-stack developer. Front-end developers will be in charge of completing the parts that users can see and interact with on the website, and back-end developers will be responsible for all the parts that make the website available. can run as smoothly as server programming, controlling how web pages load and run. Finally, Full-stack programmers, these people, in addition to Front-end and Back-end jobs, will also have to be fluent in other jobs such as providing solutions, building systems,... to Ensure that you can proactively complete a project from start to finish.\n\nIs this a job \"thirst\" for personnel?\nYes, it can be affirmed that web programming is a profession that requires a lot of manpower, but what are the characteristics of web programming that requires so much manpower and is so hot?\n\nIn fact, almost every business needs to have its own website, not only for branding and marketing, but also for selling directly on the website because the buyer's behavior has changed. from offline to online. Therefore, the workload is also gradually increasing with the number of websites launched.\nHowever, besides the quantity, the quality of websites is also required higher, so employers will require more qualified programmers. This also means that if you don't have to be \"thirsty\" for personnel, you will not be afraid of lack of work, because businesses will always require good people and higher and higher requirements, not employees who are in the right industry but not in the right industry. handle the job.\n2. Skills required to become a Website Developer\nWith the above information, we have understood what web programming is and the potential for growth in this position. But what skills do you need to become a web developer?\n\nAdvanced skill\nNot only for programming but in any profession, professional knowledge and skills are also extremely necessary, because it determines your capacity and position in the industry. Find yourself a path that is right for you and stick with that choice. Like a child, before we learn to run, we need to know how to walk. So you can pick out a suitable language and start learning from there.\n\nIt is important to always be consistent, dig deep and study a language well first, because once you are good at one language, you will have more skills to learn more languages.\n\nA programmer will need to practice logical thinking, always put himself in the user's mind, and hone his search and research skills when facing a problem that needs to be solved because programming in particular and IT in general will always always changing, need to be constantly updated.\nSoft skills\nBesides the above technical skills, soft skills are also an important factor determining whether a programmer is successful or not. People with high EQ will have a higher success rate, because in addition to being professional, they also know how to make things go more smoothly. Here are some soft skills that programmers should have:\n\nCommunication skills\nProblem solving skills\nTeamwork skill\nNegotiation and negotiation skills\nResearch and analysis skills...\n3. Conclusion\nHopefully the above information has helped people better understand the concept of web programming and the potential of the web programming profession in the future. Hope you learn well!",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676948820/Ass-ECMA/s1x5tupdsjvkoxqaau2g.jpg",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676948821/Ass-ECMA/bcvrky5oyvkaxnhxlkfy.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676948822/Ass-ECMA/emmhx9wqbjvoaxkmgewv.jpg"
+      ],
+      "date": "2023-02-14"
+    },
+    {
+      "title": "Is it difficult to learn programming by yourself? 5 tips for better self-study",
+      "categoryId": 5,
+      "shortcontent": "Programming is gradually becoming a \"hot\" industry and a trend of many young people today. Is it difficult to learn programming by yourself? This article will share with you 5 tips to learn programming better by yourself!",
+      "longcontent": "1. Is it difficult to learn programming by yourself? What are the advantages and disadvantages of self-study?\nAny profession will require self-study and self-research skills in learners, and IT requires it even more, because technology will always change and be updated continuously. However, there are still quite a few of you who wonder about self-learning programming because you don't really understand it properly.\nMisunderstandings about self-taught programming\nSelf-taught programming is completely self-taught? Self-study programming will have to tinker with, find the right path for you? Does self-study mean you'll be alone on your own? The answer is no, those are just misunderstandings of many people. Self-learning programming means that you will not become a student of universities, do not register to join external centers, but will research and research the IT industry yourself. However, self-discovering does not mean that you will have to \"groping\" alone, because at the present time, there are many free sources for you to consult knowledge such as Google, Youtube, Tiktok or even GPT Chat. ,... On Youtube and the Website, there are also many courses that are completely free and of high quality, which can help you learn more methodically and easily like F8 Official or F8's website. In addition to knowledge, another thing that also confuses many of you when you first learn is orientation. “How should I go?; which language should I learn so as not to be outdated?; Should we follow direction A, abandon direction B?;....” However, current programming channels are not only specialized but will also help us choose the most suitable direction for us, they also There will be more communities for you to exchange, ask questions and share your stories.\n\nPros and cons of self-taught programming\nTo answer the question \"is it difficult to learn programming by yourself?\" then maybe we should find out what are the pros and cons of this learning method!\n\nAdvantage:\n\nSelf-study will help you practice thinking and self-study skills, self-study, self-study and find a way to solve a problem.\nSave money, time, can work while learning because of the full initiative.\nPractice logical thinking.\nHave more self-management skills, know how to plan and allocate time appropriately.\nDefect:\n\nIt is easy to give up if you are not persistent and patient.\nIf you can't find the right direction or learn the wrong method, it will be easy to lose direction.\nTakes more time.\nIt is more difficult to study at school or center because you have to make your own route.\nSo with the above advantages and disadvantages, surely each of you will come up with the answer to the question \"is it difficult to learn programming by yourself\" for yourself, right?\n\n2. 5 tips for better self-learning\nTip 1: Definitely find the right direction for yourself\nThe direction is extremely important, so before you start, remember to figure out what you like, what you will pursue and stick with it. To find direction, in addition to hobbies and passions, your own abilities are also extremely important, so don't ignore it!\n\nTip 2: Always remember that programming is not an easy job\nThis is probably a self-talk that we should keep in mind, because information technology in general and programming in particular is a difficult industry, requiring a lot of effort, not easy and \"natural\" have a salary of thousands of dollars as many people say. Remember this, you will be more confident.\n\nTip 3: Persevere, don't give up\nAs mentioned above, programming is not easy, so don't give up. You will have to go through many trials before reaching the sweet fruit and success is not for the impatient and impatient.\n\nTip 4: Always be ready for any situation\nBeing a programmer means that you will have to be mentally prepared for every situation, because technology is always changing. You can sit for a long time, put a lot of effort into coding a program, but when it's almost done, you have to give it all up and replace it with a faster, more accurate solution. You need to understand that programming changes very quickly and that there are many good ways to approach problems. Finding new solutions is the reason of programming.\n\nTip 5: Dare to start\nLast but most importantly, have the courage to start. The first step is always the hardest, but if we dare to take it, we will open a long and hopeful journey before us.\n\nConclude\nHopefully with this article, you have given yourself a separate answer to the question \"is it difficult to learn programming by yourself\" and have been able to make a decision about the appropriate learning method. See you in the next posts!",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949301/Ass-ECMA/eeleadqjy7x7bxs8ud5h.jpg",
+      "images": [
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949302/Ass-ECMA/r5x6t9h3gv3dn9p4jc0w.jpg",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949304/Ass-ECMA/yceylvj7n7v68mmhgie1.jpg"
+      ],
+      "date": "2023-02-15",
+      "id": 3
     },
     {
       "id": 4,
-      "title": "HTML là gì? CSS là gì? Tổng quan HTML CSS",
-      "categoryId": 3,
-      "shortcontent": "Khi bạn bắt đầu học lập trình thì những từ ngữ như HTML, CSS, Javascript, C#,… sẽ khiến bạn bối rối không hiểu chúng là những gì, công dụng của chúng ra sao. \n",
-      "longcontent": "Nếu bạn có thể, hãy tưởng tượng một thời gian trước khi phát minh ra Internet. Các trang web không tồn tại và sách, được in trên giấy, là nguồn thông tin chính của bạn. Vì vậy, bạn phải mất nỗ lực đáng kể để theo dõi thông tin chính xác mà bạn cần.\n\nHôm nay bạn có thể mở trình duyệt web, đọc blog front end, chuyển qua công cụ tìm kiếm mà bạn chọn và tìm thông tin nằm trong tầm tay của bạn. Và rất có thể ai đó ở đâu đó đã xây dựng một trang web cho bạn sử dụng.\n\nTrong cuốn sách này, tôi sẽ chỉ cho bạn cách xây dựng trang web bằng hai ngôn ngữ máy tính thống trị nhất là HTML và CSS.\n\nTrước khi chúng tôi bắt đầu hành trình tìm hiểu cách xây dựng trang web bằng HTML và CSS, điều quan trọng là phải hiểu sự khác biệt giữa hai ngôn ngữ, cú pháp của từng ngôn ngữ và một số thuật ngữ phổ biến.",
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865011/Ass-ECMA/heho7478upryiwnhpkjw.png",
+      "title": "There is also \"Typescript\" in Javascript that we don't know for a long time",
+      "categoryId": 5,
+      "shortcontent": "Maybe the title will confuse some of you, new or known about Typescript (TS), let's start the article to answer any questions:",
+      "longcontent": "How to write \"TS\" in JS\nFirst we will learn the PropTypes keyword in ReactJS\n\n1. What are PropTypes:\nThe concept of Prop in React, you probably already know (if you don't know, please open Mr. Son's video immediately).\n\nWhen we pass Prop from the parent Component (Com) to the child (Com), each Prop has a different type, right.\n\nWe want each Prop to have its own type, to avoid the case that the Prop is a function and you pass the object, it will be \"Does this man's beard hold the other woman\" =))\n\n2. How to install:\nnpm install --save prop-types\n\n3. Usage:\nIn the above code we can see that in the line Counter.propTypes = ... we have declared the data type for it\n\nEx: What if we pass the wrong data type? (Instead of passing count as number, I will pass string)\n\nBoom, something went wrong here\nDisadvantages compared to TS\nThere is a disadvantage of this guy PropTypes compared to TS is that it will not report an error directly when you code the wrong type like in TS, it only indicates an error on your log.\n\nIn short\nThrough this article, I hope it will be useful for you.",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949592/Ass-ECMA/g3qaseiyjgrshmmbpot6.png",
       "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676864534/Ass-ECMA/z8kswdddlbgztfzsj3ro.png",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676864535/Ass-ECMA/yselmesfkatn7no5tmrp.jpg"
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949594/Ass-ECMA/pnn4gdmjpaoiyog8vzu8.png",
+        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676949595/Ass-ECMA/sg6z20w2ijpubbirqeyo.png"
       ],
-      "date": "2023-01-31"
-    },
-    {
-      "id": 5,
-      "title": "ECMAScript - ES6 Là gì? Overview ES6",
-      "categoryId": 4,
-      "shortcontent": "Từ trước đến giờ nhiều người chỉ nghe đến Javascript chứ chưa hề nghe đến ES6, họ lầm tưởng ES6 là một ngôn ngữ hoàn toàn mới rất mơ hồ và mông lung đúng không. Không sao hãy đến với series bài viết của mình các bạn sẽ hiểu rõ hơn về ES6 và cách triển khai của nó.",
-      "longcontent": "Khi chưa có ES thì có một đặc tả ngôn ngữ kịch bản được phát triển bởi Brendan Eich của Netscape và nó có tên là Mocha. Sau đó nó được đổi tên thành LiveScript và cuối cùng là Javascript. Vào 12-1995, Sun Microsystem và Netscape đã công bố Javascript. Tháng 3 - 1996 trình duyệt Netscape Navigator 2.0 ra đời và hỗ trợ Javascript. Sau đó, Microsoft ra mắt một ngôn ngữ tương tự tên là JScript để cạnh tranh và tránh vấn đề bản quyền. JScript được thêm vào trong Internet Explorer 3.0 và ra mắt vào tháng 8, 1996.\n\nECMAScript 6 (hay còn được gọi là ES6, ES2015) là phiên bản mới nhất của chuẩn ECMAScript. Chuẩn này được phê duyệt vào tháng 6/2015. Nó là một bản nâng cấp quan trọng cho ES kể từ ES5 đã được chuẩn hoá vào năm 2009.",
-      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865491/Ass-ECMA/yc5orwqb9avtgh3ic19q.webp",
-      "images": [
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865492/Ass-ECMA/vnn4ex1aetvuo3qgao3w.jpg",
-        "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676865493/Ass-ECMA/klmshdmoykxbwdiwy9u9.png"
-      ],
-      "date": "2023-02-08"
+      "date": "2023-02-10"
     }
-  ]
+  ],
+  "menus": []
 }

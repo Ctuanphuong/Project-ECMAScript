@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { getProjects } from "@/api/project";
 import { useEffect, useState } from "@/utilities";
 import { getBlogs } from "@/api/blog";
+import { getCategories } from "@/api/category";
+import Category from "@/components/Category";
 const HomePage = () => {
   //get all projects
   const [projects, setProjects] = useState([]);
@@ -11,6 +13,15 @@ const HomePage = () => {
       .then(({ data }) => setProjects(data))
       .catch((error) => console.error(error));
   }, []);
+  //get all categories
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getCategories()
+      .then(({ data }) => setCategories(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  //get 6 projects
   const sixProjects = projects.slice(0, 6);
   // get all blog
   const [blogs, setBlogs] = useState([]);
@@ -317,7 +328,7 @@ const HomePage = () => {
           </div>
           <div>
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1ME-_2gJYFlbw-XTWiWF527U4vmlOP8OI/view?usp=share_link"
               class="tw-py-[15px] tw-px-[42px] tw-bg-[#fd4312] tw-text-[#fff] tw-rounded-md tw-uppercase tw-no-underline tw-font-bold transition-3s hov-contact-btn"
               >Download CV</a
             >
@@ -354,6 +365,8 @@ const HomePage = () => {
       <!-- 1 row -->
       <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
         ${sixProjects.map((project) => {
+    const getNameCate = categories.filter(category => category.id === project.categoryId)
+
     return /*html*/`
           <!-- 1 column -->
           <div
@@ -367,16 +380,16 @@ const HomePage = () => {
               />
             </a>
             <div class="box-icon">
-            <a href="project-detail/${project.id}"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#fd4312]"></i></a>
+            <a href="project-detail/${project.id}"><i class="fa-solid fa-circle-info transition-3s hover:tw-text-[#022d47]"></i></a>
           </div>
           <div class="box-content">
             <span class="tw-uppercase tw-text-base tw-block tw-font-bold"
-              >${project.categoryId}
+              >${getNameCate[0]?.name}
             </span>
             <h3 class="tw-pt-[6px]">
               <a
                 href="project-detail/${project.id}"
-                class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#fd4312] tw-block"
+                class="tw-text-2xl tw-leading-tight tw-text-[#fff] txt-capital tw-font-bold tw-no-underline transition-3s hover:tw-text-[#022d47] tw-block"
                 >${project.name}</a
               >
             </h3>
@@ -514,6 +527,7 @@ const HomePage = () => {
               </div>
               <div class="grid-cols-2 tw-mb-6">
                 ${oneBlog.map(blog => {
+    const getNameCate = categories.filter(category => category.id === blog.categoryId)
     return /*html*/ `
                   <!-- one column -->
                 <div class="box-blog-1">
@@ -540,7 +554,7 @@ const HomePage = () => {
                           href=""
                           class="tw-text-[#fff] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312]"
                           ><i class="fa-regular fa-folder-open"></i>
-                          ${blog.categoryId}</a
+                          ${getNameCate[0].name}</a
                         >
                       </li>
                     </ul>
@@ -549,7 +563,7 @@ const HomePage = () => {
                       <a
                         href="/blog-detail/${blog.id}"
                         class="tw-text-3xl tw-leading-snug tw-no-underline tw-text-[#fff] tw-font-bold transition-3s hover:tw-text-[#fd4312]"
-                        >${blog.title}</a
+                        >${blog.title.slice(0, 70).concat("...")}</a
                       >
                     </h3>
                   </div>
@@ -562,6 +576,7 @@ const HomePage = () => {
                 <!-- one column -->
                 <div class="grid-cols-2">
                  ${fourBlogs.map(fblog => {
+    const getNameCate = categories.filter(category => category.id === fblog.categoryId)
     return /*html*/ `
                    <!-- a small column -->
                    <div class="box-blog-2">
@@ -578,7 +593,7 @@ const HomePage = () => {
                          <a
                            href="#"
                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                           ><i class="fa-regular fa-folder-open"></i> ${fblog.categoryId}</a
+                           ><i class="fa-regular fa-folder-open"></i> ${getNameCate[0].name}</a
                          >
                        </li>
                        <li class="tw-mt-2">
@@ -587,7 +602,7 @@ const HomePage = () => {
                              href="/blog-detail/${fblog.id}"
                              class="tw-text-xl tw-font-bold tw-no-underline tw-leading-snug tw-text-[#222] transition-3s"
                            >
-                           ${fblog.title}</a
+                           ${fblog.title.slice(0, 55).concat("...")}</a
                            >
                          </h3>
                        </li>

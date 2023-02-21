@@ -24,9 +24,16 @@ const ProjectPage = () => {
 
   // get all projects when click one category 
   const onHandleClick = (id) => {
-    fetch(`http://localhost:3000/categories/${id}?_embed=projects`)
-      .then((response) => response.json())
-      .then(({ projects }) => setProjects(projects));
+    if (id > 0) {
+      (fetch(`http://localhost:3000/categories/${id}?_embed=projects`)
+        .then((response) => response.json())
+        .then(({ projects }) => setProjects(projects)))
+    }
+    else {
+      (fetch(`http://localhost:3000/projects`)
+        .then((response) => response.json())
+        .then((projects) => setProjects(projects)))
+    }
   }
 
   return /*html*/ ` 
@@ -52,7 +59,6 @@ const ProjectPage = () => {
       </section>
       <!-- wrap my portfolio -->
       <section class="btns-portfolio">
-
         ${Category({ categories, onClick: onHandleClick })}
      ${Project({ projects })}
       </section>

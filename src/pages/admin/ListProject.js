@@ -2,6 +2,8 @@ import Header from "@/components/admin/Header";
 import Footer from "@/components/admin/Footer";
 import { useEffect, useState } from "@/utilities";
 import { getProjects, removeProject } from "@/api/project";
+import axios from "axios";
+import { getCategories } from "@/api/category";
 const ListProject = () => {
   //get all projects
   const [projects, setProjects] = useState([]);
@@ -11,6 +13,10 @@ const ListProject = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  const [categories, setCategories] = useState([])
+  useEffect(() => {
+    getCategories().then(({ data }) => setCategories(data)).catch((error) => console.error(error));
+  }, [])
   //delete project
   useEffect(() => {
     const btns = document.querySelectorAll(".btn-remove");
@@ -68,11 +74,14 @@ const ListProject = () => {
         <tbody>
         ${projects
       .map((project, index) => {
+        let getDate = project.date.split("-")
+        let getYear = new Date(...getDate);
+        const getIdCate = categories.filter(category => { return category.id == project.categoryId })
         return /*html*/ `<tr>
           <th scope="row">${index + 1}</th>
           <td>${project.name}</td>
-          <td>${project.categoryId}</td>
-          <td>${project.date}</td>
+          <td>${getIdCate[0].name}</td>
+          <td>${getYear.getFullYear()}</td>
           <td>${project.creator}</td>
           <td>
             <a

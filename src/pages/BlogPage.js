@@ -2,12 +2,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "@/utilities";
 import { getBlogs } from "@/api/blog";
+import { getCategories } from "@/api/category";
 const BlogPage = () => {
   // get all blog
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     getBlogs()
       .then(({ data }) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
+  // get all categories
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getCategories()
+      .then(({ data }) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -35,6 +43,7 @@ const BlogPage = () => {
       <section>
         <div class="container">
 ${blogs.map(blog => {
+    const getNameCate = categories.filter(category => category.id === blog.categoryId);
     return /*html*/ ` 
 <!-- 1 row -->
 <div
@@ -74,7 +83,7 @@ ${blogs.map(blog => {
         <a
           href=""
           class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s hover:tw-text-[#fd4312] font-open-sans"
-          ><i class="fa-regular fa-folder-open"></i> ${blog.categoryId}</a
+          ><i class="fa-regular fa-folder-open"></i> ${getNameCate[0].name}</a
         >
       </li>
     </ul>
