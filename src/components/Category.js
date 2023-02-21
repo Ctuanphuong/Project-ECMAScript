@@ -1,4 +1,4 @@
-import { useEffect, useState } from "@/utilities";
+import { useEffect } from "@/utilities";
 
 const Category = ({ categories, onClick }) => {
     useEffect(() => {
