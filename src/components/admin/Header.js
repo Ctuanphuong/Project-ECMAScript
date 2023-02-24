@@ -5,13 +5,13 @@ const Header = () => {
   <!-- WRAP HEADER -->
   <header class="site-header" id="site-header">
     <div class="container-full">
-      <nav class="navbar navbar-expand-lg bg-success-subtle">
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a
             class="navbar-brand tw-font-bold"
             style="color: #fd4312"
             href="/admin"
-            >PhuongDev.</a
+            ><img src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1674789466/Project%20ECMAScript/Portfolio/main-logo_qu6a9y.png" class="tw-w-[180px] tw-h-[100px] mt-1"></a
           >
           <button
             class="navbar-toggler"
@@ -88,6 +88,57 @@ const Header = () => {
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
+                  href="/admin/list-blog"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Intro
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/admin/add-intro">Add Intro</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/admin/list-intro">List Intro</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/admin/list-blog"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                About
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/admin/add-about">Add About</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/admin/list-about">List About</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/admin/list-blog"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+              Contact
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/admin/add-contact">Add Contact</a></li>
+                <li>
+                  <a class="dropdown-item" href="/admin/list-contact">List Contact</a>
+                </li>
+              </ul>
+            </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
                   href="/admin/log-out"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -106,18 +157,6 @@ const Header = () => {
                 </ul>
               </li>
             </ul>
-
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

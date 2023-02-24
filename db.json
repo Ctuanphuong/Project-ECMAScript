@@ -1,4 +1,48 @@
 {
+  "abouts": [
+    {
+      "id": 3,
+      "title": "Young Web Designer from FPT Polytechnic",
+      "content": "I am a young Front-end Developer. I am passionate about web programming. I design and develop services for clients of all sizes, specializing in creating stylish, modern websites, web services, and online stores.  I code and create web elements for amazing people around the world. I like work with new people. New people new Experiences.",
+      "heading1": "NAME",
+      "heading2": "EMAIL",
+      "heading3": "PHONE",
+      "heading4": "AGE",
+      "heading5": "EDUCATION",
+      "heading6": "FREELANCE",
+      "content1": "Chu Tuan Phuong",
+      "content2": "ctuanphuong18@gmail.com",
+      "content3": "+84 869784543",
+      "content4": "20 Years Old",
+      "content5": "ctuanphuong18@gmail.com",
+      "content6": "Available",
+      "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1677104414/Ass-ECMA/gh0mavlfgarmbfb8uuvb.jpg",
+      "link": "https://drive.google.com/file/d/1PnbzWZUJYoqz5kdXcOI0WmX-x_ud9gu1/view"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 2,
+      "heading1": "Address",
+      "heading2": "Phone Number",
+      "heading3": "Email",
+      "content1": "Ngoa Long, Minh Khai, Bac Tu Liem, Ha Noi",
+      "content2": "+84 869784543",
+      "content3": "ctuanphuong18@gmail.com",
+      "img1": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1677098964/Ass-ECMA/johennrff0pypsc9aqlp.png",
+      "img2": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1677098965/Ass-ECMA/kf6oz0kztlh0lm5saxar.png",
+      "img3": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1677098965/Ass-ECMA/ttij7vzcl7amjy3cay1b.png",
+      "link": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.8004838087018!2d105.74459841447624!3d21.038127785993282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e1!3m2!1svi!2s!4v1677100582184!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  ],
+  "intros": [
+    {
+      "id": 5,
+      "firstname": "Chu Tuan",
+      "lastname": "Phuong",
+      "shortintro": "<h4>A passionate <strong>Website Designe</strong>r from<strong> FPT Polytechnic</strong></h4>"
+    }
+  ],
   "projects": [
     {
       "id": 5,
@@ -18,11 +62,12 @@
       "creator": "Phuong, Minh, Linh"
     },
     {
+      "id": 6,
       "name": "Crayons Preschool",
       "link": "https://github.com/Ctuanphuong/HTML5-CSS3",
       "categoryId": 3,
       "shortdes": "HTML5/CSS3 assignment to create a basic website from semester 3",
-      "detaildes": "This is a project to create a website from the basic HTML/CSS3 knowledge I learned from term 2, it seems really simple but at the beginning, it took me a week to complete it.",
+      "detaildes": "<h2>Detail 1</h2><p>This is a project to create a website from the basic HTML/CSS3 knowledge I learned from term 2, it seems really simple but at the beginning, it took me a week to complete it.</p>",
       "images": [
         "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927338/Ass-ECMA/jwjltrvhgv83vbs6jyoa.png",
         "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927339/Ass-ECMA/eoyejzclfgo7qptixt7n.png",
@@ -31,8 +76,7 @@
       ],
       "avatar": "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676927342/Ass-ECMA/jueucj86ayrpeueayhlf.png",
       "date": "2022-03-21",
-      "creator": "Phuong",
-      "id": 6
+      "creator": "Phuong"
     },
     {
       "name": "Personal Website",
@@ -88,7 +132,7 @@
       "link": "",
       "categoryId": 5,
       "shortdes": "Basic Javascript assignment, semester 2",
-      "detaildes": "For the first time, I was introduced to Javascript, working with the DOM and deploying the project to the website. That feeling was so new and interesting, with the basic knowledge I learned, I completed the assignment.",
+      "detaildes": "<h3>Detail 1222</h3><p>For the first time, I was introduced to Javascript, working with the DOM and deploying the project to the website. That feeling was so new and interesting, with the basic knowledge I learned, I completed the assignment.</p><p>&nbsp;</p>",
       "images": [
         "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676947573/Ass-ECMA/rjltffcpbucgszyhfooc.png",
         "https://res.cloudinary.com/phuong-fpoly/image/upload/v1676947574/Ass-ECMA/xyqjtyypuqu06g7qdtjz.png",
@@ -171,5 +215,19 @@
       "date": "2023-02-10"
     }
   ],
-  "menus": []
+  "users": [
+    {
+      "id": 1,
+      "username": "phuongdev",
+      "password": "Ctp@180803"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "Lorem ipsum",
+      "userId": 1
+    }
+  ]
 }

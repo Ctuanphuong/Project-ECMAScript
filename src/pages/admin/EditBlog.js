@@ -20,13 +20,21 @@ const EditBlog = ({ id }) => {
       .catch((error) => console.error(error));
   }, []);
 
+  //ck editor
+  useEffect(() => {
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+  })
   //edit blog
   useEffect(() => {
     const formUpdate = document.querySelector("#form-update");
     const titleBlog = document.querySelector("#title-blog");
     const cateBlog = document.querySelector("#cate-blog");
     const shortContent = document.querySelector("#short-content");
-    const longContent = document.querySelector("#long-content");
+    const longContent = document.querySelector("#editor");
     const avatarBlog = document.querySelector("#avatar-blog");
     const imgBlog = document.querySelector("#img-blog");
     const dateBlog = document.querySelector("#date-blog");
@@ -121,13 +129,13 @@ const EditBlog = ({ id }) => {
         </div>
         <div class="form-group">
           <label
-            for="long-content"
+            for="editor"
             class="tw-block tw-mb-1 tw-mt-2 tw-font-medium"
             >Long content</label
           >
           <textarea
             class="form-control"
-            id="long-content"
+            id="editor"
             rows="3"
             placeholder="Enter long content of the blog..."
           >${blog.longcontent}</textarea>

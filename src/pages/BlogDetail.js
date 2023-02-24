@@ -61,11 +61,6 @@ const BlogDetail = ({ id }) => {
         </div>
         <!-- one section blog -->
         <div class="blog-details-section">
-          <h3
-            class="tw-font-bold tw-text-2xl tw-text-[#333] leading-normal tw-mt-8"
-          >
-           Main Content: 
-          </h3>
           <p
             class="tw-w-[90%] tw-mt-2 tw-text-[17px] tw-text-[#222] tw-font-normal tw-leading-normal"
           >

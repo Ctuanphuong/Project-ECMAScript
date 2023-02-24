@@ -14,6 +14,15 @@ const AddProject = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  //ck editor
+  useEffect(() => {
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+  })
+
   //add project
   useEffect(() => {
     const formAdd = document.querySelector("#form-add");
@@ -21,7 +30,7 @@ const AddProject = () => {
     const linkPro = document.querySelector("#link-pro");
     const catePro = document.querySelector("#cate-pro");
     const shortDes = document.querySelector("#short-des");
-    const detailDes = document.querySelector("#detail-des");
+    const detailDes = document.querySelector("#editor");
     const imgPro = document.querySelector("#img-pro");
     const datePro = document.querySelector("#date-pro");
     const creator = document.querySelector("#creator");
@@ -98,9 +107,9 @@ const AddProject = () => {
               <select class="form-control" id="cate-pro">
               <option>Select Category</option>;
               ${categories.map((category) => {
-                return `
+    return `
                 <option value="${category.id}">${category.name}</option>`;
-              })}
+  })}
               </select>
             </div>
             <div class="form-group">
@@ -118,13 +127,13 @@ const AddProject = () => {
             </div>
             <div class="form-group">
               <label
-                for="detail-des"
+                for="editor"
                 class="tw-block tw-mb-1 tw-mt-2 tw-font-medium"
                 >Detail Description</label
               >
               <textarea
                 class="form-control"
-                id="detail-des"
+                id="editor"
                 rows="3"
                 placeholder="Enter detail description of the project..."
               ></textarea>

@@ -1,13 +1,16 @@
 import AboutPage from "@/pages/AboutPage";
 import AddBlog from "@/pages/admin/AddBlog";
 import AddCategory from "@/pages/admin/AddCategory";
+import AddIntro from "@/pages/admin/AddIntro";
 import AddProject from "@/pages/admin/AddProject";
 import EditBlog from "@/pages/admin/EditBlog";
 import EditCategory from "@/pages/admin/EditCategory";
+import EditIntro from "@/pages/admin/EditIntro";
 import EditProject from "@/pages/admin/EditProject";
 import HomePageAdmin from "@/pages/admin/HomePageAdmin";
 import ListBlog from "@/pages/admin/ListBlog";
 import ListCategory from "@/pages/admin/ListCategory";
+import ListIntro from "@/pages/admin/ListIntro";
 import ListProject from "@/pages/admin/ListProject";
 import LoginPage from "@/pages/admin/LoginPage";
 import BlogDetail from "@/pages/BlogDetail";
@@ -21,6 +24,12 @@ import ServicesPage from "@/pages/ServicesPage";
 import { render, router } from "@/utilities";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import AddContact from "@/pages/admin/AddContact";
+import ListContact from "@/pages/admin/ListContact";
+import EditContact from "@/pages/admin/EditContact";
+import AddAbout from "@/pages/admin/AddAbout";
+import ListAbout from "@/pages/admin/ListAbout";
+import EditAbout from "@/pages/admin/EditAbout";
 const app = document.querySelector("#app");
 router.on("/", () => render(HomePage, app));
 router.on("/about", () => render(AboutPage, app));
@@ -36,6 +45,7 @@ router.on("/blog-detail/:id", ({ data }) =>
 );
 
 //Admin routes
+router.on("/login", () => render(LoginPage, app));
 router.on("/admin", () => render(HomePageAdmin, app));
 //category
 router.on("/admin/add-category", () => render(AddCategory, app));
@@ -57,7 +67,23 @@ router.on("/admin/edit-blog/:id", ({ data }) =>
   render(() => EditBlog(data), app)
 );
 
-router.on("/admin/login", () => render(LoginPage, app));
+//intro
+router.on("/admin/add-intro", () => render(AddIntro, app))
+router.on("/admin/list-intro", () => render(ListIntro, app))
+router.on("/admin/edit-intro/:id", ({ data }) => render(() => EditIntro(data), app))
+router.on("/admin/login", ({ data }) => render(LoginPage(data), app));
+
+//contact
+router.on("/admin/add-contact", () => render(AddContact, app))
+router.on("/admin/list-contact", () => render(ListContact, app))
+router.on("/admin/edit-contact/:id", ({ data }) => render(() => EditContact(data), app))
+
+//about
+router.on("/admin/add-about", () => render(AddAbout, app));
+router.on("/admin/list-about", () => render(ListAbout, app));
+router.on("/admin/edit-about/:id", ({ data }) => render(() => EditAbout(data), app));
 router.notFound(render(PageNotFound, app));
+
+
 
 router.resolve();

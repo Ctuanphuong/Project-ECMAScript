@@ -313,8 +313,9 @@
   line-height: 60px;
   color: #fff;
   padding: 0 30px;
+  overflow: hidden;
 }
-.icon-contact svg {
+.icon-contact img {
   position: absolute;
 }
 .grid-cols-3 {

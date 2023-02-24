@@ -4,8 +4,22 @@ import { getProjects } from "@/api/project";
 import { useEffect, useState } from "@/utilities";
 import { getBlogs } from "@/api/blog";
 import { getCategories } from "@/api/category";
-import Category from "@/components/Category";
+import SendEmail from "@/components/SendEmail";
+import { getIntros } from "@/api/intro";
+import { getContacts } from "@/api/contact";
+import { getAbouts } from "@/api/about";
+
 const HomePage = () => {
+
+  //get all intros
+  const [intros, setIntros] = useState([]);
+  useEffect(() => {
+    getIntros()
+      .then(({ data }) => setIntros(data))
+      .catch((error) => console.error(error));
+  }, []);
+  const newIntros = intros.slice(0, 1)
+
   //get all projects
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -32,6 +46,33 @@ const HomePage = () => {
   }, []);
   const oneBlog = blogs.slice(0, 1)
   const fourBlogs = blogs.slice(0, 4)
+
+  //get one contact
+  const [contacts, setContacts] = useState([]);
+  useEffect(() => {
+    getContacts().then(({ data }) => setContacts(data))
+      .catch((error) => console.error(error));
+  }, []);
+  const newContacts = contacts.slice(0, 1)
+
+  //get all abouts
+  const [abouts, setAbouts] = useState([]);
+  useEffect(() => {
+    getAbouts()
+      .then(({ data }) => setAbouts(data))
+      .catch((error) => console.error(error));
+  }, []);
+  const newAbouts = abouts.slice(0, 1);
+  //gọi sendEmail
+  useEffect(() =>
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        SendEmail()
+      })
+  );
+
   return /*html*/ `
  ${Header()}
  <!-- Site Banner -->
@@ -42,16 +83,10 @@ const HomePage = () => {
        <p class="tw-text-2xl tw-text-[#333] tw-font-bold tw-mt-4">
          Hello, I'm
        </p>
-       <p class="tw-text-7xl tw-mt-4 tw-text-[#fdb63c] tw-font-bold">
-         Chu Tuan
-       </p>
-       <p class="tw-text-[#fd4312] tw-text-7xl tw-mt-4 tw-font-bold">
-         Phuong
-       </p>
-       <p class="tw-text-2xl tw-text-[#615978] tw-mt-7 tw-font-normal">
-         A passionate <strong>Website Designer</strong> from
-         <strong>FPT Polytechnic</strong>
-       </p>
+       ${newIntros.map(intro =>
+        /*html*/` <p class="tw-text-7xl tw-mt-4 tw-text-[#fdb63c] tw-font-bold">${intro.firstname}</p>
+        <p class="tw-text-[#fd4312] tw-text-7xl tw-mt-4 tw-font-bold">${intro.lastname}</p>
+        <p class="tw-text-2xl  tw-mt-7 tw-font-normal">${intro.shortintro}</p>`).join("")}
        <!-- contact section -->
        <div class="tw-flex tw-mt-[60px]">
          <div class="tw-mr-6">
@@ -220,128 +255,127 @@ const HomePage = () => {
     <!-- end section intro -->
     <!-- wrap about me -->
     <section class="tw-bg-[#e9ecef] tw-mb-[100px]">
-      <div class="container tw-flex tw-pt-[90px] tw-pb-[100px]">
-        <div>
-          <span
-            class="tw-text-lg tw-uppercase tw-text-[#fd4312] tw-font-bold"
-            >About me</span
-          >
-          <h2
-            class="tw-text-5xl tw-font-bold tw-text-[#222] tw-leading-tight tw-mb-8"
-          >
-            Young Web Designer from FPT Polytechnic
-          </h2>
-          <p class="tw-text-lg tw-text-[#615978] tw-leading-normal">
-            I am a young Front-end Developer. I am passionate about web
-            programming. I design and develop services for clients of all
-            sizes, specializing in creating stylish, modern websites, web
-            services, and online stores.
-          </p>
-          <p class="tw-text-lg tw-text-[#615978] tw-leading-normal">
-            I code and create web elements for amazing people around the
-            world. I like work with new people. New people new
-            Experiences.
-          </p>
-          <div class="row tw-pt-6 tw-mb-9">
-            <!-- 1 column -->
-            <div class="col-md-6">
-              <ul class="tw-p-0">
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    Name
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    Chu Tuan Phuong
-                  </p>
-                </li>
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    Email
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    ctuanphuong18@gmail.com
-                  </p>
-                </li>
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    Phone
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    +84 869784543
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <!-- 1 column -->
-            <div class="col-md-6">
-              <ul class="tw-p-0">
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    Age
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    20 Years Old
-                  </p>
-                </li>
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    EDUCATION
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    FPT Polytechnic College
-                  </p>
-                </li>
-                <li class="tw-list-none">
-                  <h4
-                    class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
-                  >
-                    Freelance
-                  </h4>
-                  <p
-                    class="tw-text-[#615978] tw-text-lg tw-leading-normal"
-                  >
-                    Available
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <a
-              href="https://drive.google.com/file/d/1ME-_2gJYFlbw-XTWiWF527U4vmlOP8OI/view?usp=share_link"
-              class="tw-py-[15px] tw-px-[42px] tw-bg-[#fd4312] tw-text-[#fff] tw-rounded-md tw-uppercase tw-no-underline tw-font-bold transition-3s hov-contact-btn"
-              >Download CV</a
-            >
-          </div>
-        </div>
-        <div class="tw-ml-[100px] tw-h-auto">
+    
+         ${newAbouts.map(about => {
+    return /*html*/ `
+    <div class="container tw-flex tw-pt-[90px] tw-pb-[100px]">
+    <div class="tw-w-[55%]">
+      <span
+        class="tw-text-lg tw-uppercase tw-text-[#fd4312] tw-font-bold"
+        >About me</span
+      >
+<h2
+class="tw-text-5xl tw-font-bold tw-text-[#222] tw-leading-tight tw-mb-8"
+>
+${about.title}
+</h2>
+<p class="tw-text-lg tw-text-[#615978] tw-leading-normal tw-w-[100%]">
+${about.content}
+</p>
+<div class="row tw-pt-6 tw-mb-9">
+<!-- 1 column -->
+<div class="col-md-6">
+  <ul class="tw-p-0">
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading1}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content1}
+      </p>
+    </li>
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading2}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content2}
+      </p>
+    </li>
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading3}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content3}
+      </p>
+    </li>
+  </ul>
+</div>
+<!-- 1 column -->
+<div class="col-md-6">
+  <ul class="tw-p-0">
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading4}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content4}
+      </p>
+    </li>
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading5}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content5}
+      </p>
+    </li>
+    <li class="tw-list-none">
+      <h4
+        class="tw-text-[#222] tw-text-base tw-uppercase tw-font-bold"
+      >
+      ${about.heading6}
+      </h4>
+      <p
+        class="tw-text-[#615978] tw-text-lg tw-leading-normal"
+      >
+      ${about.content6}
+      </p>
+    </li>
+  </ul>
+</div>
+</div>
+<div>
+<a
+  href=" ${about.link}"
+  class="tw-py-[15px] tw-px-[42px] tw-bg-[#fd4312] tw-text-[#fff] tw-rounded-md tw-uppercase tw-no-underline tw-font-bold transition-3s hov-contact-btn"
+  >Download CV</a
+>
+</div>
+</div>
+        <div class="tw-ml-[100px] tw-h-auto tw-w-[45%]">
           <img
-            src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1674699425/Phuongdzvl/z3986215443062_9346f7e00a76ff291e3aac85478d4c14_lpexsi.jpg"
+            src="${about.avatar}"
             alt="Phuong Dev's Image"
             class="tw-w-[100%] tw-rounded-xl hov-img-shadow transition-3s hover:tw-rotate-3 tw-h-[90%]"
           />
         </div>
-      </div>
+        </div>
+`
+  }).join("")}
+        
+    
     </section>
     <!-- end wrap about me -->
     <!-- wrap my portfolio -->
@@ -648,104 +682,54 @@ const HomePage = () => {
               </div>
             </div>
             <div class="grid-cols-3 tw-pb-[50px]">
-              <!-- a column -->
-              <div class="tw-flex">
-                <div>
-                  <div class="icon-contact">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                      class="bi bi-pin-map"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"
-                      />
-                    </svg>
+              ${newContacts.map(contact => {
+    return /*html*/ `
+                <!-- a column -->
+                <div class="tw-flex">
+                  <div>
+                    <div class="icon-contact">
+                    <img src="${contact.img1}" class="tw-w-[40%] tw-h-[40%]">
+                    </div>
+                  </div>
+                  <div>
+                  <h4 class="tw-text-2xl tw-font-bold">${contact.heading1}</h4>
+                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">${contact.content1}</address>
                   </div>
                 </div>
-                <div>
-                  <h4 class="tw-text-2xl tw-font-bold">Address</h4>
-                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">
-                    Minh Khai, Bac Tu Liem, Ha Noi
-                  </address>
-                </div>
-              </div>
-              <!-- end a column -->
-              <!-- a column -->
-              <div class="tw-flex">
-                <div>
-                  <div class="icon-contact">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                      class="bi bi-phone"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"
-                      />
-                      <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                    </svg>
+                <!-- end a column -->
+                <!-- a column -->
+                <div class="tw-flex">
+                  <div>
+                    <div class="icon-contact">
+                    <img src="${contact.img2}" class="tw-w-[40%] tw-h-[40%]">
+                    </div>
+                  </div>
+                  <div>
+                  <h4 class="tw-text-2xl tw-font-bold">${contact.heading2}</h4>
+                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">${contact.content2}</address>
                   </div>
                 </div>
-                <div>
-                  <h4 class="tw-text-2xl tw-font-bold">Phone Number</h4>
-                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">
-                    +84 869784543
-                  </address>
-                </div>
-              </div>
-              <!-- end a column -->
-              <!-- a column -->
-              <div class="tw-flex">
-                <div>
-                  <div class="icon-contact">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                      class="bi bi-mailbox"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"
-                      />
-                      <path
-                        d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"
-                      />
-                    </svg>
+                <!-- end a column -->
+                <!-- a column -->
+                <div class="tw-flex">
+                  <div>
+                    <div class="icon-contact">
+                    <img src="${contact.img3}" class="tw-w-[40%] tw-h-[40%]">
+                    </div>
+                  </div>
+                  <div>
+                  <h4 class="tw-text-2xl tw-font-bold">${contact.heading3}</h4>
+                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">${contact.content3}</address>
                   </div>
                 </div>
-                <div>
-                  <h4 class="tw-text-2xl tw-font-bold">Email</h4>
-                  <address class="font-open-sans tw-text-lg tw-text-[#615978]">
-                    ctuanphuong18@gmail.com
-                  </address>
-                </div>
-              </div>
-              <!-- end a column -->
+                <!-- end a column -->`
+  }).join('')}
             </div>
             <div class="tw-flex tw-mt">
               <div class="sec-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6360.988841678123!2d105.74171053113166!3d21.05245676423713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455a2979cad73%3A0xd73e878e23ff9ddd!2zNTMvNTkvNTAgUC4gTmfhu41hIExvbmcsIE1pbmggS2hhaSwgQuG6r2MgVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1675729869112!5m2!1svi!2s"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  class="tw-w-full tw-h-full"
-                ></iframe>
+              ${newContacts.map((contact) => {
+    return /*html*/ `${contact.link}`
+  }).join("")}
               </div>
               <div class="sec-mess">
                 <h3
@@ -754,13 +738,14 @@ const HomePage = () => {
                   Write me a message
                 </h3>
                 <div>
-                  <form>
+                  <form id="contact-form">
                     <div class="row">
                       <div class="col">
                         <input
                           type="text"
                           class="form-control"
                           placeholder="Your Name*"
+                          id="name"
                         />
                       </div>
                       <div class="col">
@@ -768,13 +753,14 @@ const HomePage = () => {
                           type="text"
                           class="form-control"
                           placeholder="Your Email*"
+                          id="email"
                         />
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlTextarea1"></label>
+                        <label for="message"></label>
                         <textarea
                           class="form-control"
-                          id="exampleFormControlTextarea1"
+                          id="message"
                           rows="8"
                           placeholder="Your message here*"
                         ></textarea>

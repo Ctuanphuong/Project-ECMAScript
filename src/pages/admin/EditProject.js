@@ -20,6 +20,13 @@ const EditProject = ({ id }) => {
     getProject(id).then(({ data }) => setProject(data));
   }, []);
 
+  useEffect(() => {
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+  })
   //edit project
   useEffect(() => {
     const formEdit = document.querySelector("#form-edit");
@@ -27,7 +34,7 @@ const EditProject = ({ id }) => {
     const linkPro = document.querySelector("#link-pro");
     const catePro = document.querySelector("#cate-pro");
     const shortDes = document.querySelector("#short-des");
-    const detailDes = document.querySelector("#detail-des");
+    const detailDes = document.querySelector("#editor");
     const imgPro = document.querySelector("#img-pro");
     const datePro = document.querySelector("#date-pro");
     const creator = document.querySelector("#creator");
@@ -177,13 +184,13 @@ const EditProject = ({ id }) => {
             </div>
             <div class="form-group">
               <label
-                for="detail-des"
+                for="editor"
                 class="tw-block tw-mb-1 tw-mt-2 tw-font-medium"
                 >Detail Description</label
               >
               <textarea
                 class="form-control"
-                id="detail-des"
+                id="editor"
                 rows="3"
                 placeholder="Enter detail description of the project..."
               >${project.detaildes}</textarea>

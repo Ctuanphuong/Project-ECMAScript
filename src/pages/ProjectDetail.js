@@ -71,18 +71,13 @@ const ProjectDetail = ({ id }) => {
 
           <a href="${project.link}" class="tw-mt-5 tw-block tw-no-underline tw-font-bold"
             ><mark
-              class="tw-text-[#333] transition-3s hover:tw-bg-[#fd4312] hover:tw-text-[#fff] hover:tw-underline tw-px-3 tw-rounded-sm"
+              class="tw-text-[#333] transition-3s hover:tw-bg-[#fd4312] hover:tw-text-[#fff] hover:tw-underline tw-px-3 tw-rounded-sm tw-mb-10"
               >👉 Click here to visit this website</mark
             ></a
           >
         </div>
         <!-- one section blog -->
         <div class="blog-details-section">
-          <h3
-            class="tw-font-bold tw-text-2xl tw-text-[#333] leading-normal tw-mt-8 tw-capitalize"
-          >
-            website preview
-          </h3>
           <p
             class="tw-w-[90%] tw-mt-2 tw-text-[17px] tw-text-[#222] tw-font-normal tw-leading-normal"
           >

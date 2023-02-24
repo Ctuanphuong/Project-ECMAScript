@@ -1,4 +1,30 @@
+import { router, useEffect } from "@/utilities";
+
 const LoginPage = () => {
+
+  useEffect(() => {
+
+    const loginForm = document.querySelector('#login-form');
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = loginForm.elements.username.value;
+      const password = loginForm.elements.password.value;
+
+      const response = await fetch('http://localhost:3000/users');
+      const users = await response.json();
+      const user = users.find(user => user.username === username && user.password === password);
+
+      if (user) {
+        alert('Login successfully');
+        router.navigate("/admin");
+
+      } else {
+        alert('Login failed');
+      }
+    });
+  })
+
   return /*html*/ `<div class="login-page">
   <div class="tw-text-center tw-py-5 tw-leading-normal">
     <h1 class="tw-font-semibold tw-text-3xl tw-text-[#fff]">
@@ -6,10 +32,10 @@ const LoginPage = () => {
     </h1>
   </div>
   <div class="form">
-    <form class="login-form">
-      <input type="text" placeholder="username" />
-      <input type="password" placeholder="password" />
-      <button>login</button>
+    <form class="login-form" id="login-form">
+      <input type="text" placeholder="username" id="username" name="username" />
+      <input type="password" placeholder="password" id="password" name="password"/>
+      <button type="submit">login</button>
       <p class="message">
         Forgot password? <a href="#">Recover password now</a>
       </p>

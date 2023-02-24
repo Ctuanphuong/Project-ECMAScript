@@ -80,7 +80,7 @@ const ListProject = () => {
         return /*html*/ `<tr>
           <th scope="row">${index + 1}</th>
           <td>${project.name}</td>
-          <td>${getIdCate[0].name}</td>
+         <td>${getIdCate[0]?.name}</td>
           <td>${getYear.getFullYear()}</td>
           <td>${project.creator}</td>
           <td>
