@@ -10,7 +10,6 @@ import { getContacts } from "@/api/contact";
 import { getAbouts } from "@/api/about";
 
 const HomePage = () => {
-
   //get all intros
   const [intros, setIntros] = useState([]);
   useEffect(() => {
@@ -18,7 +17,7 @@ const HomePage = () => {
       .then(({ data }) => setIntros(data))
       .catch((error) => console.error(error));
   }, []);
-  const newIntros = intros.slice(0, 1)
+  const newIntros = intros.slice(0, 1);
 
   //get all projects
   const [projects, setProjects] = useState([]);
@@ -44,16 +43,17 @@ const HomePage = () => {
       .then(({ data }) => setBlogs(data))
       .catch((error) => console.error(error));
   }, []);
-  const oneBlog = blogs.slice(0, 1)
-  const fourBlogs = blogs.slice(0, 4)
+  const oneBlog = blogs.slice(0, 1);
+  const fourBlogs = blogs.slice(0, 4);
 
   //get one contact
   const [contacts, setContacts] = useState([]);
   useEffect(() => {
-    getContacts().then(({ data }) => setContacts(data))
+    getContacts()
+      .then(({ data }) => setContacts(data))
       .catch((error) => console.error(error));
   }, []);
-  const newContacts = contacts.slice(0, 1)
+  const newContacts = contacts.slice(0, 1);
 
   //get all abouts
   const [abouts, setAbouts] = useState([]);
@@ -69,7 +69,7 @@ const HomePage = () => {
       .getElementById("contact-form")
       .addEventListener("submit", function (event) {
         event.preventDefault();
-        SendEmail()
+        SendEmail();
       })
   );
 
@@ -83,10 +83,15 @@ const HomePage = () => {
        <p class="tw-text-2xl tw-text-[#333] tw-font-bold tw-mt-4">
          Hello, I'm
        </p>
-       ${newIntros.map(intro =>
-        /*html*/` <p class="tw-text-7xl tw-mt-4 tw-text-[#fdb63c] tw-font-bold">${intro.firstname}</p>
+       ${newIntros
+         .map(
+           (
+             intro
+           ) => /*html*/ ` <p class="tw-text-7xl tw-mt-4 tw-text-[#fdb63c] tw-font-bold">${intro.firstname}</p>
         <p class="tw-text-[#fd4312] tw-text-7xl tw-mt-4 tw-font-bold">${intro.lastname}</p>
-        <p class="tw-text-2xl  tw-mt-7 tw-font-normal">${intro.shortintro}</p>`).join("")}
+        <p class="tw-text-2xl  tw-mt-7 tw-font-normal">${intro.shortintro}</p>`
+         )
+         .join("")}
        <!-- contact section -->
        <div class="tw-flex tw-mt-[60px]">
          <div class="tw-mr-6">
@@ -143,7 +148,7 @@ const HomePage = () => {
          ><img
            src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675732410/Phuongdzvl/z4089536537933_86732b06f1b33f8f45773fe1ff68548a_lkddmz.jpg"
            alt="avatar"
-           class="tw-w-[240px] tw-h-[240px] tw-mt-4 tw-rounded-full tw-border-[3px] tw-border-[#fd4312] transition-3s hov-border-yellow hov-bot-shadow"
+           class="tw-w-[240px] tw-h-[240px] tw-mt-4 tw-rounded-full tw-border-[3px] transition-3s border-orange hov-border-yellow hov-bot-shadow"
          />
        </a>
      </div>
@@ -256,8 +261,9 @@ const HomePage = () => {
     <!-- wrap about me -->
     <section class="tw-bg-[#e9ecef] tw-mb-[100px]">
     
-         ${newAbouts.map(about => {
-    return /*html*/ `
+         ${newAbouts
+           .map((about) => {
+             return /*html*/ `
     <div class="container tw-flex tw-pt-[90px] tw-pb-[100px]">
     <div class="tw-w-[55%]">
       <span
@@ -372,8 +378,9 @@ ${about.content}
           />
         </div>
         </div>
-`
-  }).join("")}
+`;
+           })
+           .join("")}
         
     
     </section>
@@ -398,10 +405,13 @@ ${about.content}
       </div>
       <!-- 1 row -->
       <div class="tw-grid tw-grid-cols-3 gap-4 mb-4">
-        ${sixProjects.map((project) => {
-    const getNameCate = categories.filter(category => category.id === project.categoryId)
+        ${sixProjects
+          .map((project) => {
+            const getNameCate = categories.filter(
+              (category) => category.id === project.categoryId
+            );
 
-    return /*html*/`
+            return /*html*/ `
           <!-- 1 column -->
           <div
             class="tw-rounded-xl tw-relative transition-3s box tw-border"
@@ -430,8 +440,9 @@ ${about.content}
           </div>
           </div>
           <!-- end column -->
-          `
-  }).join("")}
+          `;
+          })
+          .join("")}
       </div>
       <!-- end row -->
       <!-- btn see more -->
@@ -560,9 +571,11 @@ ${about.content}
                 </div>
               </div>
               <div class="grid-cols-2 tw-mb-6">
-                ${oneBlog.map(blog => {
-    const getNameCate = categories.filter(category => category.id === blog.categoryId)
-    return /*html*/ `
+                ${oneBlog.map((blog) => {
+                  const getNameCate = categories.filter(
+                    (category) => category.id === blog.categoryId
+                  );
+                  return /*html*/ `
                   <!-- one column -->
                 <div class="box-blog-1">
                 <div class="img-wrapper">
@@ -604,14 +617,17 @@ ${about.content}
                 </div>
               </div>
               <!-- end column -->
-                  `
-  })}
+                  `;
+                })}
 
                 <!-- one column -->
                 <div class="grid-cols-2">
-                 ${fourBlogs.map(fblog => {
-    const getNameCate = categories.filter(category => category.id === fblog.categoryId)
-    return /*html*/ `
+                 ${fourBlogs
+                   .map((fblog) => {
+                     const getNameCate = categories.filter(
+                       (category) => category.id === fblog.categoryId
+                     );
+                     return /*html*/ `
                    <!-- a small column -->
                    <div class="box-blog-2">
                    <div class="img-wrapper">
@@ -627,7 +643,9 @@ ${about.content}
                          <a
                            href="#"
                            class="tw-text-[#948daa] tw-no-underline tw-capitalize transition-3s font-open-sans"
-                           ><i class="fa-regular fa-folder-open"></i> ${getNameCate[0].name}</a
+                           ><i class="fa-regular fa-folder-open"></i> ${
+                             getNameCate[0].name
+                           }</a
                          >
                        </li>
                        <li class="tw-mt-2">
@@ -649,8 +667,9 @@ ${about.content}
                    </div>
                  </div>
                  <!-- end a small column -->
-                  `
-  }).join('')}
+                  `;
+                   })
+                   .join("")}
                 </div>
                 <!-- end column -->
               </div>
@@ -682,8 +701,9 @@ ${about.content}
               </div>
             </div>
             <div class="grid-cols-3 tw-pb-[50px]">
-              ${newContacts.map(contact => {
-    return /*html*/ `
+              ${newContacts
+                .map((contact) => {
+                  return /*html*/ `
                 <!-- a column -->
                 <div class="tw-flex">
                   <div>
@@ -722,14 +742,17 @@ ${about.content}
                   <address class="font-open-sans tw-text-lg tw-text-[#615978]">${contact.content3}</address>
                   </div>
                 </div>
-                <!-- end a column -->`
-  }).join('')}
+                <!-- end a column -->`;
+                })
+                .join("")}
             </div>
             <div class="tw-flex tw-mt">
               <div class="sec-map">
-              ${newContacts.map((contact) => {
-    return /*html*/ `${contact.link}`
-  }).join("")}
+              ${newContacts
+                .map((contact) => {
+                  return /*html*/ `${contact.link}`;
+                })
+                .join("")}
               </div>
               <div class="sec-mess">
                 <h3

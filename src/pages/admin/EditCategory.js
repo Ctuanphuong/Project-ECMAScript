@@ -22,22 +22,23 @@ const EditCategory = ({ id }) => {
         name: nameCategory.value,
       };
       updateCategory(newCategory)
-        .then(() => router.navigate("/admin/list-category"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Update Category Successfully!");
+          router.navigate("/admin/list-category");
+        })
+        .catch(({ errors }) => {
+          alert("Update Error: " + errors);
+          console.error(errors);
+        });
     });
   });
   return /*html*/ `  
   ${Header()}
     <!-- WRAP ARTICLE -->
-    <article class="tw-pb-10">
-      <div class="welcome container tw-my-10 tw-text-center">
-        <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-          Category Administrator Page
-        </h1>
-      </div>
-      <div class="container">
+    <article class="tw-pb-10 mt-5">
+      <div class="container px-4">
         <div class="tw-my-4">
-          <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+          <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-pen-to-square"></i> Edit Category
           </h3>
         </div>

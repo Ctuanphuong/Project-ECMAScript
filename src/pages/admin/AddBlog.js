@@ -15,12 +15,10 @@ const AddBlog = () => {
 
   //ck editor
   useEffect(() => {
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .catch(error => {
-        console.error(error);
-      });
-  })
+    ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+      console.error(error);
+    });
+  });
 
   // add blog
   useEffect(() => {
@@ -47,22 +45,23 @@ const AddBlog = () => {
       };
       //add
       addBlog(blog)
-        .then(() => router.navigate("/admin/list-blog"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Add Blog Successfully!");
+          router.navigate("/admin/list-blog");
+        })
+        .catch(({ errors }) => {
+          alert("Add Blog Failure! ", errors);
+          console.error(errors);
+        });
     });
   });
   return /*html*/ `
   <!-- WRAP ARTICLE -->
    ${Header()}
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Blog Administrator Page
-      </h1>
-    </div>
-    <div class="container">
+  <article class="tw-pb-10 mt-5">
+    <div class="container px-4">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Blog
         </h3>
       </div>
@@ -89,8 +88,8 @@ const AddBlog = () => {
           <select class="form-control" id="cate-blog">
           <option value="0">Select Category</option>
           ${categories.map((category) => {
-    return /*html*/ `<option value="${category.id}">${category.name}</option>`;
-  })}
+            return /*html*/ `<option value="${category.id}">${category.name}</option>`;
+          })}
           </select>
         </div>
         <div class="form-group">

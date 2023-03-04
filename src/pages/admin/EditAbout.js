@@ -1,17 +1,18 @@
-import Header from "@/components/admin/Header"
-import Footer from "@/components/admin/Footer"
-import { router, useEffect, useState } from "@/utilities"
-import { getAbout, updateAbout } from "@/api/about"
-import UpImage from "@/components/admin/UpImage"
+import Header from "@/components/admin/Header";
+import Footer from "@/components/admin/Footer";
+import { router, useEffect, useState } from "@/utilities";
+import { getAbout, updateAbout } from "@/api/about";
+import UpImage from "@/components/admin/UpImage";
 const EditAbout = ({ id }) => {
   //get one about
-  const [about, setAbout] = useState({})
+  const [about, setAbout] = useState({});
   useEffect(() => {
-    getAbout(id).then(({ data }) => setAbout(data))
+    getAbout(id)
+      .then(({ data }) => setAbout(data))
       .catch((error) => console.log(error));
-  }, [])
+  }, []);
 
-  //update about 
+  //update about
   useEffect(() => {
     const formUpdate = document.querySelector("#form-update");
     const title = document.querySelector("#about-title");
@@ -34,7 +35,10 @@ const EditAbout = ({ id }) => {
     formUpdate.addEventListener("submit", async (e) => {
       e.preventDefault();
       let avatar = "";
-      avatar = avatarAbout.files.length > 0 ? await UpImage(avatarAbout.files) : avatarAbout.accept;
+      avatar =
+        avatarAbout.files.length > 0
+          ? await UpImage(avatarAbout.files)
+          : avatarAbout.accept;
       const newAbout = {
         id,
         title: title.value,
@@ -56,23 +60,24 @@ const EditAbout = ({ id }) => {
       };
       // update About
       updateAbout(newAbout)
-        .then(() => router.navigate("/admin/list-about"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Update About Successfully!");
+          router.navigate("/admin/list-about");
+        })
+        .catch(({ errors }) => {
+          alert("Update Error: " + errors);
+          console.error(errors);
+        });
     });
   });
-  return /*html*/`
+  return /*html*/ `
 ${Header()}
  <!-- WRAP ARTICLE -->
- <article class="tw-pb-10">
- <div class="welcome container tw-my-10 tw-text-center">
-   <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-     About Administrator Page
-   </h1>
- </div>
- <div class="container">
+ <article class="tw-pb-10 mt-5">
+ <div class="container px-4">
    <div class="tw-my-4">
-     <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-       <i class="fa-solid fa-square-plus tw-mr-1"></i> Add About
+     <h3 class="text-info tw-font-bold tw-text-xl">
+     <i class="fa-solid fa-pen-to-square"></i> Edit About
      </h3>
    </div>
    <form id="form-update">
@@ -303,7 +308,9 @@ class="form-control"
 id="about-avatar"
 accept= "${about.avatar}"
 />
-<img src="${about.avatar}" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-border tw-my-2">
+<img src="${
+    about.avatar
+  }" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-border tw-my-2">
 </div>
      <div class="tw-mt-4">
        <button class="btn btn-success btn-add">Update About</button>
@@ -312,7 +319,7 @@ accept= "${about.avatar}"
  </div>
 </article>
 <!-- END WRAP ARTICLE -->
-   ${Footer()} `
-}
+   ${Footer()} `;
+};
 
-export default EditAbout
+export default EditAbout;

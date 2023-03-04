@@ -21,12 +21,10 @@ const EditProject = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .catch(error => {
-        console.error(error);
-      });
-  })
+    ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+      console.error(error);
+    });
+  });
   //edit project
   useEffect(() => {
     const formEdit = document.querySelector("#form-edit");
@@ -73,8 +71,14 @@ const EditProject = ({ id }) => {
 
       //update project
       updateProject(newProject)
-        .then(() => router.navigate("/admin/list-project"))
-        .catch(() => console.error("Error!"));
+        .then(() => {
+          alert("Update Project Successfully");
+          router.navigate("/admin/list-project");
+        })
+        .catch(({ errors }) => {
+          alert("Update Error: " + errors);
+          console.error(errors);
+        });
     });
   });
 
@@ -109,15 +113,10 @@ const EditProject = ({ id }) => {
 
   return /*html*/ ` ${Header()}
   <!-- WRAP ARTICLE -->
-      <article class="tw-pb-10">
-        <div class="welcome container tw-my-10 tw-text-center">
-          <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-            Project Administrator Page
-          </h1>
-        </div>
-        <div class="container">
+      <article class="tw-pb-10 mt-5">
+        <div class="container px-4">
           <div class="tw-my-4">
-            <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+            <h3 class="text-info tw-font-bold tw-text-xl">
             <i class="fa-solid fa-pen-to-square"></i> Edit Project
             </h3>
           </div>
@@ -159,14 +158,14 @@ const EditProject = ({ id }) => {
               <select class="form-control" id="cate-pro">
               <option>Seclect Category</option>
               ${categories.map((category) => {
-    if (project.categoryId == category.id) {
-      return /*html*/ `
+                if (project.categoryId == category.id) {
+                  return /*html*/ `
                 <option value="${category.id}" selected>${category.name}</option>`;
-    } else {
-      return /*html*/ `
+                } else {
+                  return /*html*/ `
                 <option value="${category.id}">${category.name}</option>`;
-    }
-  })}
+                }
+              })}
               </select>
             </div>
             <div class="form-group">
@@ -207,8 +206,9 @@ const EditProject = ({ id }) => {
               id="avatar-pro"
               accept ="${project.avatar}"
             />
-            <img src="${project.avatar
-    }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
+            <img src="${
+              project.avatar
+            }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
           </div>
             <div class="form-group">
               <label
@@ -225,9 +225,11 @@ const EditProject = ({ id }) => {
               />
             </div>
             <div class="tw-flex"> 
-    ${project.images?.map(img => {
-      return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mx-2 tw-my-2 tw-rounded">`;
-    }).join("")}
+    ${project.images
+      ?.map((img) => {
+        return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mx-2 tw-my-2 tw-rounded">`;
+      })
+      .join("")}
             </div>
             <div class="form-group">
               <label

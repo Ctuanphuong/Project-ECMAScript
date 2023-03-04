@@ -22,12 +22,10 @@ const EditBlog = ({ id }) => {
 
   //ck editor
   useEffect(() => {
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .catch(error => {
-        console.error(error);
-      });
-  })
+    ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+      console.error(error);
+    });
+  });
   //edit blog
   useEffect(() => {
     const formUpdate = document.querySelector("#form-update");
@@ -62,22 +60,23 @@ const EditBlog = ({ id }) => {
       };
       //update blog
       updateBlog(newBlog)
-        .then(() => router.navigate("/admin/list-blog"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Update Blog Successfully!");
+          router.navigate("/admin/list-blog");
+        })
+        .catch(({ errors }) => {
+          alert("Update Error: " + errors);
+          console.error(errors);
+        });
     });
   });
   return /*html*/ `
   ${Header()}
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Blog Administrator Page
-      </h1>
-    </div>
-    <div class="container">
+  <article class="tw-pb-10 mt-5">
+    <div class="container px-4">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-          <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Blog
+        <h3 class="text-info tw-font-bold tw-text-xl">
+        <i class="fa-solid fa-pen-to-square"></i> Edit Blog
         </h3>
       </div>
       <form id="form-update">
@@ -104,14 +103,14 @@ const EditBlog = ({ id }) => {
           <select class="form-control" id="cate-blog">
           <option value="0">Select Category</option>
           ${categories.map((category) => {
-    if (blog.categoryId == category.id) {
-      return /*html*/ `
+            if (blog.categoryId == category.id) {
+              return /*html*/ `
               <option value="${category.id}" selected>${category.name}</option>`;
-    } else {
-      return /*html*/ `
+            } else {
+              return /*html*/ `
             <option value="${category.id}">${category.name}</option>`;
-    }
-  })}
+            }
+          })}
           </select>
         </div>
         <div class="form-group">
@@ -153,8 +152,9 @@ const EditBlog = ({ id }) => {
             accept="${blog.avatar}"
           />
         </div>
-        <img src="${blog.avatar
-    }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
+        <img src="${
+          blog.avatar
+        }" class="tw-w-[100px] tw-h-[100px] tw-my-2 tw-border tw-border-[#ccc] tw-rounded" >
         <div class="form-group">
         <label
           for="img-blog"
@@ -170,9 +170,11 @@ const EditBlog = ({ id }) => {
         />
       </div>
       <div class="tw-flex "> 
-      ${blog.images?.map(img => {
-      return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mr-4 tw-my-2 tw-rounded">`;
-    }).join("")}
+      ${blog.images
+        ?.map((img) => {
+          return /*html*/ `<img src="${img}" class="tw-w-[70px] tw-h-[70px] tw-mr-4 tw-my-2 tw-rounded">`;
+        })
+        .join("")}
               </div>
         <div class="form-group">
           <label

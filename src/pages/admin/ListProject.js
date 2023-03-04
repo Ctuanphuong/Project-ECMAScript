@@ -13,10 +13,12 @@ const ListProject = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
-    getCategories().then(({ data }) => setCategories(data)).catch((error) => console.error(error));
-  }, [])
+    getCategories()
+      .then(({ data }) => setCategories(data))
+      .catch((error) => console.error(error));
+  }, []);
   //delete project
   useEffect(() => {
     const btns = document.querySelectorAll(".btn-remove");
@@ -44,15 +46,10 @@ const ListProject = () => {
   return /*html*/ ` 
   ${Header()}
      <!-- WRAP ARTICLE -->
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Project Administrator Page
-      </h1>
-    </div>
+  <article class="tw-pb-10 px-3 mt-5">
     <div class="container">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-list tw-mr-2"></i>List Project
         </h3>
       </div>
@@ -73,11 +70,13 @@ const ListProject = () => {
         </thead>
         <tbody>
         ${projects
-      .map((project, index) => {
-        let getDate = project.date.split("-")
-        let getYear = new Date(...getDate);
-        const getIdCate = categories.filter(category => { return category.id == project.categoryId })
-        return /*html*/ `<tr>
+          .map((project, index) => {
+            let getDate = project.date.split("-");
+            let getYear = new Date(...getDate);
+            const getIdCate = categories.filter((category) => {
+              return category.id == project.categoryId;
+            });
+            return /*html*/ `<tr>
           <th scope="row">${index + 1}</th>
           <td>${project.name}</td>
          <td>${getIdCate[0]?.name}</td>
@@ -91,21 +90,21 @@ const ListProject = () => {
             >
           </td>
         
-          <td><img src="${project.avatar
+          <td><img src="${
+            project.avatar
           }" class="tw-w-[70px] tw-h-[70px] tw-rounded"></td>
         
           <td>
-            <a href="#" data-id="${project.id
-          }" class="btn btn-danger btn-remove"
+            <button data-id="${project.id}" class="btn btn-danger btn-remove"
               ><i class="fa-solid fa-trash"></i
-            ></a>
+            ></button>
             <a href="/admin/edit-project/${project.id}" class="btn btn-warning"
               ><i class="fa-solid fa-pen-to-square"></i
             ></a>
           </td>
         </tr>`;
-      })
-      .join("")}      
+          })
+          .join("")}      
         </tbody>
       </table>
     </div>

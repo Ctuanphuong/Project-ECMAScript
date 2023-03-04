@@ -7,7 +7,8 @@ const EditContact = ({ id }) => {
   //get one contact
   const [contact, setContact] = useState({});
   useEffect(() => {
-    getContact(id).then(({ data }) => setContact(data))
+    getContact(id)
+      .then(({ data }) => setContact(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -30,11 +31,20 @@ const EditContact = ({ id }) => {
       // const img2 = await UpImage(imgSecond.files)
       // const img3 = await UpImage(imgThird.files)
       let img1 = "";
-      img1 = imgFirst.files.length > 0 ? await UpImage(imgFirst.files) : imgFirst.accept
+      img1 =
+        imgFirst.files.length > 0
+          ? await UpImage(imgFirst.files)
+          : imgFirst.accept;
       let img2 = "";
-      img2 = imgSecond.files.length > 0 ? await UpImage(imgSecond.files) : imgSecond.accept
+      img2 =
+        imgSecond.files.length > 0
+          ? await UpImage(imgSecond.files)
+          : imgSecond.accept;
       let img3 = "";
-      img3 = imgThird.files.length > 0 ? await UpImage(imgThird.files) : imgThird.accept
+      img3 =
+        imgThird.files.length > 0
+          ? await UpImage(imgThird.files)
+          : imgThird.accept;
       const newContact = {
         id,
         heading1: headingFirst.value,
@@ -50,23 +60,24 @@ const EditContact = ({ id }) => {
       };
       // add Category
       updateContact(newContact)
-        .then(() => router.navigate("/admin/list-contact"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Update Contact Successfully");
+          router.navigate("/admin/list-contact");
+        })
+        .catch(({ errors }) => {
+          alert("Update Error: " + errors);
+          console.error(errors);
+        });
     });
   });
   return /*html*/ `  
 ${Header()}
   <!-- WRAP ARTICLE -->
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Contact Administrator Page
-      </h1>
-    </div>
-    <div class="container">
+  <article class="tw-pb-10 mt-5">
+    <div class="container px-4">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-          <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Contact
+        <h3 class="text-info tw-font-bold tw-text-xl">
+        <i class="fa-solid fa-pen-to-square"></i> Add Contact
         </h3>
       </div>
       <form id="form-update">
@@ -110,7 +121,9 @@ ${Header()}
         id="img1"
         accept="${contact.img1}"
       />
-      <img src="${contact.img1}" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
+      <img src="${
+        contact.img1
+      }" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
     </div>
       
       <div class="form-group">
@@ -153,7 +166,9 @@ ${Header()}
     id="img2"
     accept="${contact.img2}"
   />
-  <img src="${contact.img2}" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
+  <img src="${
+    contact.img2
+  }" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
 </div>
   <div class="form-group">
   <label
@@ -196,7 +211,9 @@ ${Header()}
   id="img3"
   accept="${contact.img3}"
 />
-<img src="${contact.img3}" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
+<img src="${
+    contact.img3
+  }" class="tw-w-[70px] tw-h-[70px] tw-rounded tw-my-2 tw-border">
 </div>
 <div class="form-group">
 <label
@@ -214,7 +231,7 @@ ${Header()}
 </div>
 
         <div class="tw-mt-4">
-          <button class="btn btn-success btn-add">Add Contact</button>
+          <button class="btn btn-success btn-add">Update Contact</button>
         </div>
       </form>
     </div>

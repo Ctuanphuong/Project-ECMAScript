@@ -43,15 +43,10 @@ const ListBlog = () => {
   return /*html*/ `
    <!-- WRAP ARTICLE -->
    ${Header()}
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Blog Administrator Page
-      </h1>
-    </div>
+  <article class="tw-pb-10 px-3 mt-5">
     <div class="container">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-list tw-mr-2"></i>List Blog
         </h3>
       </div>
@@ -68,24 +63,28 @@ const ListBlog = () => {
           </tr>
         </thead>
         <tbody>
-          ${blogs.map((blog, index) => {
-    const getIdCate = categories.filter(category => { return category.id == blog.categoryId })
-    return /*html*/ `  
+          ${blogs
+            .map((blog, index) => {
+              const getIdCate = categories.filter((category) => {
+                return category.id == blog.categoryId;
+              });
+              return /*html*/ `  
 <tr>
 <th scope="row">${index + 1}</th>
 <td>${blog.title}</td>
 <td>${getIdCate[0].name}</td>
 <td>${blog.shortcontent}</td>
 <td>
-  <a data-id="${blog.id}" class="btn btn-danger btn-remove"
+  <button data-id="${blog.id}" class="btn btn-danger btn-remove"
     ><i class="fa-solid fa-trash"></i
-  ></a>
+  ></button>
   <a href="/admin/edit-blog/${blog.id}" class="btn btn-warning btn-update"
     ><i class="fa-solid fa-pen-to-square"></i
   ></a>
 </td>
 </tr>`;
-  })}
+            })
+            .join("")}
         
         </tbody>
       </table>

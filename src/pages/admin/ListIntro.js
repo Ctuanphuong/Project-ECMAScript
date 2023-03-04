@@ -29,15 +29,10 @@ const ListIntro = () => {
   return /*html*/ `
   ${Header()}
    <!-- WRAP ARTICLE -->
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Category Administrator Page
-      </h1>
-    </div>
+  <article class="tw-pb-10 px-3 mt-5">
     <div class="container">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-list tw-mr-2"></i>List Category
         </h3>
       </div>
@@ -56,24 +51,22 @@ const ListIntro = () => {
         <tbody>
           
           ${intros
-      .map((intro, index) => {
-        return `<tr>
+            .map((intro, index) => {
+              return `<tr>
             <th scope="row">${index + 1}</th>
             <td>${intro.firstname}</td>
             <td>${intro.lastname}</td>
             <td>${intro.shortintro}</td>
             <td>
-              <a href="#" class="btn btn-danger btn-remove" data-id="${intro.id
-          }">
-              <i class="fa-solid fa-trash"></i></a>
-              <a href="/admin/edit-intro/${intro.id
-          }" class="btn btn-warning"
+              <button class="btn btn-danger btn-remove" data-id="${intro.id}">
+              <i class="fa-solid fa-trash"></i></button>
+              <a href="/admin/edit-intro/${intro.id}" class="btn btn-warning"
                 ><i class="fa-solid fa-pen-to-square"></i
               ></a>
             </td>
           </tr>`;
-      })
-      .join("")}
+            })
+            .join("")}
           
         </tbody>
       </table>

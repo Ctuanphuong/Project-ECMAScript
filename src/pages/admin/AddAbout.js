@@ -46,22 +46,24 @@ const AddAbout = () => {
       };
       // add About
       addAbout(about)
-        .then(() => router.navigate("/admin/list-about"))
-        .catch((error) => console.error(error));
+        .then(() => {
+          alert("Add About Successfully!");
+          router.navigate("/admin/list-about");
+        })
+        .catch(({ errors }) => {
+          alert("Add About Failure!", errors);
+          console.error(errors);
+        });
     });
   });
   return /*html*/ `  
 ${Header()}
   <!-- WRAP ARTICLE -->
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        About Administrator Page
-      </h1>
-    </div>
-    <div class="container">
+  <article class="tw-pb-10 mt-5">
+
+    <div class="container px-4">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-square-plus tw-mr-1"></i> Add About
         </h3>
       </div>
@@ -290,4 +292,3 @@ placeholder="Enter content..."
 };
 
 export default AddAbout;
-

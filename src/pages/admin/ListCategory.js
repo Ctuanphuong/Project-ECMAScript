@@ -29,15 +29,10 @@ const ListCategory = () => {
   return /*html*/ `
   ${Header()}
    <!-- WRAP ARTICLE -->
-  <article class="tw-pb-10">
-    <div class="welcome container tw-my-10 tw-text-center">
-      <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-        Category Administrator Page
-      </h1>
-    </div>
+  <article class="tw-pb-10 px-3 mt-5">
     <div class="container">
       <div class="tw-my-4">
-        <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+        <h3 class="text-info tw-font-bold tw-text-xl">
           <i class="fa-solid fa-list tw-mr-2"></i>List Category
         </h3>
       </div>
@@ -59,10 +54,10 @@ const ListCategory = () => {
             <th scope="row">${index + 1}</th>
             <td>${category.name}</td>
             <td>
-              <a href="#" class="btn btn-danger btn-remove" data-id="${
+              <button class="btn btn-danger btn-remove" data-id="${
                 category.id
               }">
-              <i class="fa-solid fa-trash"></i></a>
+              <i class="fa-solid fa-trash"></i></button>
               <a href="/admin/edit-category/${
                 category.id
               }" class="btn btn-warning"

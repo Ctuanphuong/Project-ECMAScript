@@ -16,12 +16,10 @@ const AddProject = () => {
 
   //ck editor
   useEffect(() => {
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .catch(error => {
-        console.error(error);
-      });
-  })
+    ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+      console.error(error);
+    });
+  });
 
   //add project
   useEffect(() => {
@@ -52,22 +50,23 @@ const AddProject = () => {
       };
       // add project
       addProject(project)
-        .then(() => router.navigate("/admin/list-project"))
-        .catch(() => console.error("Error!"));
+        .then(() => {
+          alert("Add Project Successfully");
+          router.navigate("/admin/list-project");
+        })
+        .catch(({ errors }) => {
+          alert("Add Project Failure!", errors);
+          console.error(errors);
+        });
     });
   });
 
   return /*html*/ `${Header()}
   <!-- WRAP ARTICLE -->
-      <article class="tw-pb-10">
-        <div class="welcome container tw-my-10 tw-text-center">
-          <h1 class="tw-text-4xl tw-text-[#333] tw-font-bold">
-            Project Administrator Page
-          </h1>
-        </div>
-        <div class="container">
+      <article class="tw-pb-10 mt-5">
+       <div class="container px-4">
           <div class="tw-my-4">
-            <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+            <h3 class="text-info tw-font-bold tw-text-xl">
               <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Project
             </h3>
           </div>
@@ -107,9 +106,9 @@ const AddProject = () => {
               <select class="form-control" id="cate-pro">
               <option>Select Category</option>;
               ${categories.map((category) => {
-    return `
+                return `
                 <option value="${category.id}">${category.name}</option>`;
-  })}
+              })}
               </select>
             </div>
             <div class="form-group">

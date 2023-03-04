@@ -7,9 +7,9 @@ const Footer = () => {
         <div class="col-lg-6 tw-mx-auto">
           <a href="/">
             <img
-              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1675065205/Project%20ECMAScript/Portfolio/main-logo_e3cxnc.png"
+              src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1677753097/Project%20ECMAScript/Portfolio/logo_ze5we1.png"
               alt="Phuong Dev's Logo"
-              class="tw-w-[180px] tw-h-[100px] tw-mt-[60px] tw-mx-auto"
+              class="tw-w-[200px] tw-h-[90px] tw-mt-[60px] tw-mx-auto"
             />
           </a>
           <div class="tw-w-[70%] tw-mx-auto">

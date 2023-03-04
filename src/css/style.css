@@ -26,8 +26,11 @@
   background-color: #ba2e07;
   color: #fff;
 }
+.border-orange {
+  border: solid 3px #fd4312;
+}
 .hov-border-yellow:hover {
-  border: solid 3px #fdb63c;
+  border: solid 3px #fde63c;
 }
 .effect-avt .img-absolute {
   position: absolute;
