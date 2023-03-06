@@ -59,9 +59,9 @@
 .skill-section {
   background: url("https://res.cloudinary.com/phuong-fpoly/image/upload/v1675129900/Project%20ECMAScript/Portfolio/skill-bg_vaxwdn.jpg");
 }
-.site-footer {
+/* .site-footer {
   position: relative;
-}
+} */
 .site-footer .back-to-top {
   position: absolute;
   right: 100px;
@@ -401,4 +401,17 @@
 .btn-see-more a:hover {
   color: #fff;
   background-color: #e29511;
+}
+.wrap-btt {
+  position: relative;
+  top: 29px;
+  display: flex;
+  justify-content: flex-end;
+}
+.emoji-inner {
+  margin-top: 12px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
 }

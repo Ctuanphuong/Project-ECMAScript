@@ -1,15 +1,27 @@
 const Footer = () => {
   return /*html*/ `
+  <div class="wrap-btt container">
+  <div
+  class="back-to-top tw-w-[60px] tw-h-[60px] tw-bg-[#fd4312] transition-3s hover:tw-bg-[#ba2e07] tw-rounded-full tw-flex tw-justify-center tw-items-center"
+>
+  <a
+    href="#site-header"
+    class="tw-no-underline tw-text-[#fff] tw-text-3xl hover:tw-text-[#fff] tw-font-normal"
+  >
+    <i class="fa-solid fa-angle-up"></i>
+  </a>
+</div>
+  </div>
    <!-- FOOTER SECTION -->
   <footer class="site-footer tw-bg-[#f5edd8]">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 tw-mx-auto">
-          <a href="/">
+          <a href="/" class="tw-flex tw-justify-center">
             <img
               src="https://res.cloudinary.com/phuong-fpoly/image/upload/v1677753097/Project%20ECMAScript/Portfolio/logo_ze5we1.png"
               alt="Phuong Dev's Logo"
-              class="tw-w-[200px] tw-h-[90px] tw-mt-[60px] tw-mx-auto"
+              class="tw-w-[200px] tw-h-[90px] tw-mt-[60px] "
             />
           </a>
           <div class="tw-w-[70%] tw-mx-auto">
@@ -75,16 +87,7 @@ const Footer = () => {
           >
         </div>
       </div>
-      <div
-        class="back-to-top tw-w-[60px] tw-h-[60px] tw-bg-[#fd4312] transition-3s hover:tw-bg-[#ba2e07] tw-rounded-full tw-flex tw-justify-center tw-items-center"
-      >
-        <a
-          href="#site-header"
-          class="tw-no-underline tw-text-[#fff] tw-text-3xl hover:tw-text-[#fff] tw-font-normal"
-        >
-          <i class="fa-solid fa-angle-up"></i>
-        </a>
-      </div>
+    
     </div>
   </footer>
   <!-- END FOOTER SECTION -->

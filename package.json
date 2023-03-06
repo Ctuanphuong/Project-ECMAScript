@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "json-server --watch db.json",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server db.json -m ./node_modules/json-server-auth"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
